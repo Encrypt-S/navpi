@@ -1,0 +1,171 @@
+@import url(http://fonts.googleapis.com/css?family=Exo+2:500);
+ body {
+    padding-top: 40px;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+/* navbar */
+
+/* title */
+.navbar-default .navbar-brand {
+    color: #337ab7;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #66CCFF;
+}
+.navbar-brand {
+    padding: 5px;
+}
+.navbar-brand:hover {
+    background-color: #f5f5f5;
+}
+/* link */
+.navbar-default .navbar-nav > li > a {
+    color: #777;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #333;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #333;
+    background-color: #E7E7E7;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #555;
+    background-color: #D5D5D5;
+}
+.navbar-default .navbar-text {
+  color: #777;
+}
+/* caret */
+.navbar-default .navbar-nav > .dropdown > a .caret {
+    border-top-color: #777;
+    border-bottom-color: #777;
+}
+.navbar-default .navbar-nav > .dropdown > a:hover .caret,
+.navbar-default .navbar-nav > .dropdown > a:focus .caret {
+    border-top-color: #333;
+    border-bottom-color: #333;
+}
+.navbar-default .navbar-nav > .open > a .caret,
+.navbar-default .navbar-nav > .open > a:hover .caret,
+.navbar-default .navbar-nav > .open > a:focus .caret {
+    border-top-color: #555;
+    border-bottom-color: #555;
+}
+/* mobile version */
+.navbar-default .navbar-toggle {
+    border-color: #337ab7;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #66CCFF;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #337ab7;
+}
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #337ab7;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #337ab7;
+    }
+}
+.content {
+	margin: 0px 0px 20px;
+	padding: 8px 8px 10px;
+	min-height: 0px;
+	background-color: #f5f5f5;
+	border-radius: 0 0 4px 4px;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  border: 1px solid #DDD;
+}
+.content-header {
+    height: 65px;
+    line-height: 65px;
+}
+.content-header h1 {
+    margin: 0;
+    margin-left: 20px;
+    line-height: 65px;
+    display: inline-block;
+}
+
+footer {
+	text-align: center;
+}
+.container > footer p {
+	text-align: center; /* center align it with the container */
+}
+a:hover,
+a:focus {
+  color: #333;
+  text-decoration: none;
+}
+.table-bordered {
+  border: 1px solid #CCC;
+}
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+  border: 1px solid #CCC;
+}
+.table-hover > tbody > tr:hover {
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+.panel-default {
+  border-color: #CCC;
+}
+
+.well b a, footer a {
+  color: #333;
+}
+
+.btn-blue {
+  color: #FFF;
+  background-color: #43b5eb;
+  border-color: #1381b5;
+}
+
+.btn-blue:hover, .btn-blue:active,  .btn-blue:focus {
+  background-color: #71c7f0;
+  border-color: #43b5eb;
+}
+
+.table-row-label {
+  line-height: 40px;
+}
+
+.table-row-label b {
+  margin-left: 10px;
+  line-height: 38px;
+}
+
+.btn-default {
+  margin-bottom: 10px;
+}
+
+.form-control {
+  margin-bottom: 10px;
+}
+
+form {
+  margin-bottom: 0px;
+}
