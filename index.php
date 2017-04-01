@@ -24,11 +24,12 @@ if ($currentWallet == NavCoin){
 	$days = floor($time / 86400);
 	$hours = floor(($time / 3600) % 24);
 	$minutes = floor(($time / 60) % 60);
-	$fiatValue = number_format($bal1 * $price * $fiatBTC);
+	$fiatValue = ($bal1 * $price * $fiatBTC);
 	$fiatValue = sprintf("%01.2f", $fiatValue);
 	$btcValue = ($bal1 * $price);
 	$btcValue = sprintf("%01.8f", $btcValue);
 	$img = shell_exec("qrencode --output=- -l H -d 144 -s 50 -m 1 $address"); $imgData = "data:image/png;base64," . base64_encode($img);
+	$fiatValue = number_format($fiatValue);
 ?>
 <div class="row">
 	<div class="col-lg-6">
