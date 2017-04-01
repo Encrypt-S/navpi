@@ -24,7 +24,7 @@ if ($currentWallet == NavCoin){
 	$days = floor($time / 86400);
 	$hours = floor(($time / 3600) % 24);
 	$minutes = floor(($time / 60) % 60);
-	$fiatValue = ($bal1 * $price * $fiatBTC);
+	$fiatValue = number_format($bal1 * $price * $fiatBTC);
 	$fiatValue = sprintf("%01.2f", $fiatValue);
 	$btcValue = ($bal1 * $price);
 	$btcValue = sprintf("%01.8f", $btcValue);
@@ -32,7 +32,7 @@ if ($currentWallet == NavCoin){
 ?>
 <div class="row">
 	<div class="col-lg-6">
-		<h3>Available Balance: <font color='green'><?php echo $bal1; ?></font> <?php echo $currentWallet; ?></h3>
+		<h3>Available Balance: <font color='green'><?php echo number_format($bal1); ?></font> <?php echo $currentWallet; ?></h3>
 		<h4>Unavailable Due To Staking: <font color='red'><?php echo $bal4; ?></font> <?php echo $currentWallet; ?></h4>
 		<h4>BTC Value: <font color='green'><?php echo "{$btcValue}"; ?></font></h4>
 		<h4><?php echo $longCurrency; ?> Value: <font color='green'><?php echo "{$symbol}{$fiatValue}"; ?></font></h4><br>
