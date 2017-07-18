@@ -10,6 +10,12 @@
 #	include("/home/stakebox/UI/email.php");
 	include("diskusage.php");
 
+	//hard set currency to usd
+
+	$currency='usd';
+	$longCurrency='US Dollar';
+	$symbol='$';
+
 
 	session_start();
 	if (isset($_GET['currentWallet']) && !empty($_GET['currentWallet']))
@@ -33,58 +39,58 @@
 
 	// fetch price in BTC price of current coin
 	$curl = curl_init();
-	curl_setopt($curl, CURLOPT_URL, "https://www.cryptonator.com/api/full/".$pair);
+	curl_setopt($curl, CURLOPT_URL, "https://api.coinmarketcap.com/v1/ticker/nav-coin/");
 	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 	$rawData = curl_exec($curl);
 	curl_close($curl);
 	$data = json_decode($rawData);
-	$price = $data->ticker->markets[0]->price;
-
+	$priceBtc = $data[0]->price_btc;
+	$priceUsd = $data[0]->price_usd;
 	// fetch fiat value of BTC
-	$curl = curl_init();
-	curl_setopt($curl, CURLOPT_URL, "http://api.cryptocoincharts.info/tradingPair/btc_".$currency);
-	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-	$rawData1 = curl_exec($curl);
-	curl_close($curl);
-	$data1 = json_decode($rawData1);
-	$fiatBTC = $data1->price;
+	// $curl = curl_init();
+	// curl_setopt($curl, CURLOPT_URL, "http://api.cryptocoincharts.info/tradingPair/btc_".$currency);
+	// curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+	// $rawData1 = curl_exec($curl);
+	// curl_close($curl);
+	// $data1 = json_decode($rawData1);
+	// $fiatBTC = $data1->price;
+	//
+	// $lastRunLog = '/home/stakebox/UI/lastrun';
+	// $versionLocation = '/home/stakebox/UI/version.php';
+	//
+	// if(!file_exists("$lastRunLog")){
+	// 	$file = fopen("$lastRunLog","w");
+	// 	fwrite($file,"");
+	// 	fclose($file);
+	// }
+	//
+	// if(!file_exists("$versionLocation")){
+	// 	$file = fopen("$versionLocation","w");
+	// 	fwrite($file,"");
+	// 	fclose($file);
+	// }
 
-	$lastRunLog = '/home/stakebox/UI/lastrun';
-	$versionLocation = '/home/stakebox/UI/version.php';
-
-	if(!file_exists("$lastRunLog")){
-		$file = fopen("$lastRunLog","w");
-		fwrite($file,"");
-		fclose($file);
-	}
-
-	if(!file_exists("$versionLocation")){
-		$file = fopen("$versionLocation","w");
-		fwrite($file,"");
-		fclose($file);
-	}
-
-	if (file_exists($lastRunLog)) {
-	    $lastRun = file_get_contents($lastRunLog);
-	    if (time() - $lastRun >= 86400) {
-        	// fetch github info
-        	$curl = curl_init();
-		curl_setopt($curl, CURLOPT_HTTPHEADER,array('User-Agent: StakeBox'));
-        	curl_setopt($curl, CURLOPT_URL, "https://api.github.com/repos/stakebox/webui/tags");
-        	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        	$rawData2 = curl_exec($curl);
-        	curl_close($curl);
-	        $data2 = json_decode($rawData2);
-		$current = $data2[0]->name;
-	        //update lastrun.log with current time
-	        file_put_contents($lastRunLog, time());
-		//update version.php with current version
-		$fp = fopen($versionLocation, "w");
-	  	fwrite($fp, "<?php\n\$newestVersion='$current';\n?>");
-	  	fclose($fp);
-
-	    }
-	}
+	// if (file_exists($lastRunLog)) {
+	//     $lastRun = file_get_contents($lastRunLog);
+	//     if (time() - $lastRun >= 86400) {
+  //       	// fetch github info
+  //       	$curl = curl_init();
+	// 	curl_setopt($curl, CURLOPT_HTTPHEADER,array('User-Agent: StakeBox'));
+  //       	curl_setopt($curl, CURLOPT_URL, "https://api.github.com/repos/stakebox/webui/tags");
+  //       	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+  //       	$rawData2 = curl_exec($curl);
+  //       	curl_close($curl);
+	//         $data2 = json_decode($rawData2);
+	// 	$current = $data2[0]->name;
+	//         //update lastrun.log with current time
+	//         file_put_contents($lastRunLog, time());
+	// 	//update version.php with current version
+	// 	$fp = fopen($versionLocation, "w");
+	//   	fwrite($fp, "<?php\n\$newestVersion='$current';\n?>");
+	//   	fclose($fp);
+	//
+	//     }
+	// }
 
 $lockStateLocation = "/home/stakebox/UI/".$currentWallet."lockstate.php";
 
@@ -127,7 +133,7 @@ function changeLockState(){
 		include("/home/stakebox/UI/".$currentWallet."lockstate.php");
 	}
 
-	$currentVersion = 'v1.2.3';
+	$currentVersion = 'v1.0.1';
 
 	if ($ref_tag != $current_tag){
 	    $uptodate = "update available";
@@ -187,7 +193,7 @@ function changeLockState(){
 					<li><a href="help">Help</a></li>
 				</ul>
 				<div class="navbar-right">
-					<p class="navbar-text"><?php 	echo "Current price is <b id='price'>{$price}</b> BTC on {$data->ticker->markets[0]->market}"; ?></p>
+					<p class="navbar-text"><?php 	echo "Current price is <b id='price'>{$price}</b> BTC"; ?></p>
 					<!--
 					<p class="navbar-text">Select Wallet:</p>
 					<ul class="nav navbar-nav">
