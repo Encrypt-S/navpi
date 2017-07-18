@@ -43,6 +43,9 @@
 	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 	$rawData = curl_exec($curl);
 	curl_close($curl);
+	echo "<pre>";
+	print_r($rawData);
+	echo "</pre>";
 	$data = json_decode($rawData);
 	$priceBtc = $data[0]->price_btc;
 	$priceUsd = $data[0]->price_usd;

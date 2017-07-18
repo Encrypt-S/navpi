@@ -1,8 +1,8 @@
-<?php 
+<?php
 include ("header.php");
 include ("pass.php");
 ?>
-	
+
    <b><a name="server">Server</a></b>
       <div style="padding: 5px 30px 5px;">
          <div class="row">
@@ -16,7 +16,7 @@ include ("pass.php");
             <a href="getblockcount" class='btn btn-default' role='button'>Get Block #</a>
             <a href="allcommands" class='btn btn-default' role='button'>All Commands</a>
             <a href="setpass" class='btn btn-default' role='button'>Change UI Password</a>
-            <a href="changecurrency" class='btn btn-default' role='button'>Change Currency</a>
+            <!-- <a href="changecurrency" class='btn btn-default' role='button'>Change Currency</a> -->
          </div><!-- /.row -->
       </div><!-- /.padding -->
       <div style="padding: 5px 15px 5px;">
@@ -31,7 +31,7 @@ include ("pass.php");
                   </div><!-- /input-group -->
                </form>
             </div><!-- /.col-lg-8 -->
-         </div><!-- /.row -->	    
+         </div><!-- /.row -->
       </div><!-- /.padding -->
 </div><!-- /.well -->
 
@@ -151,7 +151,7 @@ include ("pass.php");
                </form>
             </div><!-- /.col-lg-6 -->
          </div><!-- /.row -->
-      </div><!-- /.padding -->			
+      </div><!-- /.padding -->
 </div><!-- /.well -->
 
 <div class="well">
@@ -172,7 +172,7 @@ include ("pass.php");
                <form action="listreceivedbyaddress" method="POST"><input type="hidden">
                   <div class="input-group">
                      <span class="input-group-btn">
-                        <button class='btn btn-default' type="submit" value="listreceivedbyaddress">List Received According To Address</button>      
+                        <button class='btn btn-default' type="submit" value="listreceivedbyaddress">List Received According To Address</button>
                      </span>
                         <input class="form-control" type="text" name="minconf" placeholder="Minimum Confirmations">
                   </div><!-- /input-group -->
@@ -187,7 +187,7 @@ include ("pass.php");
                         <input class="form-control" type="text" name="txid" placeholder="Transaction id">
                   </div><!-- /input-group -->
                </form>
-            </div><!-- /.col-lg-6 -->            
+            </div><!-- /.col-lg-6 -->
          </div><!-- /.row -->
          <div class="row">
             <div class="col-lg-6">
@@ -245,7 +245,7 @@ include ("pass.php");
             <div class="col-lg-6">
                <input class="form-control" type="text" name="address" placeholder="To Address">
             </div><!-- /.col-lg-6 -->
-         </div><!-- /.row -->                
+         </div><!-- /.row -->
          <div class="row">
             <div class="col-lg-6">
                <input class="form-control" type="text" name="amount" placeholder="amount">
@@ -267,9 +267,9 @@ include ("pass.php");
                   <button class='btn btn-default btn-block' type="submit" value="walletlock">Lock Your Wallet</button>
                </form>
             </div><!-- /.col-lg-2 -->
-            <div class="col-lg-2"> 
+            <div class="col-lg-2">
                <form action="downloadwallet" method="POST"><input type="hidden">
-	          <button class='btn btn-default btn-block' type="submit" value="backupwallet">Backup Wallet</button>	       
+	          <button class='btn btn-default btn-block' type="submit" value="backupwallet">Backup Wallet</button>
                </form>
             </div><!-- /.col-lg-2 -->
             <div class="col-lg-8">
@@ -306,14 +306,14 @@ include ("pass.php");
                         <button class='btn btn-default' type="submit" value="unlockstaking">Unlock Wallet For Staking Only</button>
                      </span>
                         <input class="form-control" type="password" name="password" placeholder="Password">
-                  </div><!-- /input-group -->            
+                  </div><!-- /input-group -->
                </form>
             </div><!-- /.col-lg-6 -->
             <div class="col-lg-6">
                <form action="unlockwallet" method="POST"><input type="hidden">
                   <div class="input-group">
                      <span class="input-group-btn">
-                        <button class='btn btn-default' type="submit" value="unlockwallet">Unlock Wallet To Send</button>	
+                        <button class='btn btn-default' type="submit" value="unlockwallet">Unlock Wallet To Send</button>
                      </span>
 	                <input class="form-control" type="password" name="password" placeholder="password">
                   </div><!-- /input-group -->
@@ -321,22 +321,22 @@ include ("pass.php");
             </div><!-- /.col-lg-6 -->
          </div><!-- /.row -->
          <div class="row">
-            <div class="col-lg-5">  
+            <div class="col-lg-5">
                <form action="dumpprivkey" method="POST"><input type="hidden">
                   <div class="input-group">
                      <span class="input-group-btn">
-	                <button class='btn btn-default' type="submit" value="dumpprivkey">Dump Private Key</button>	      
+	                <button class='btn btn-default' type="submit" value="dumpprivkey">Dump Private Key</button>
                      </span>
                         <input class="form-control" type="text" name="address" placeholder="Address">
 		     </span>
                   </div><!-- /input-group -->
                </form>
             </div><!-- /.col-lg-5 -->
-            <div class="col-lg-5"> 
+            <div class="col-lg-5">
                <form action="importprivkey" method="POST"><input type="hidden">
                   <div class="input-group">
                      <span class="input-group-btn">
-	                <button class='btn btn-default' type="submit" value="importwallet">Import Private Key</button>	       
+	                <button class='btn btn-default' type="submit" value="importwallet">Import Private Key</button>
 	             </span>
                         <input class="form-control" type="text" name="key" placeholder="Private Key">
                   </div><!-- /input-group -->
