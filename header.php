@@ -49,6 +49,18 @@
 	$data = json_decode($rawData);
 	$priceBtc = $data[0]->price_btc;
 	$priceUsd = $data[0]->price_usd;
+
+	echo "<pre>";
+	print_r($data);
+	echo "</pre>";
+
+	echo "<pre>";
+	print_r($data[0]);
+	echo "</pre>";
+
+	echo "<pre>";
+	print_r([$priceBtc, $priceUsd]);
+	echo "</pre>";
 	/*
 	// fetch fiat value of BTC
 	$curl = curl_init();
