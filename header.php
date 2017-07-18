@@ -121,6 +121,10 @@ function changeLockState(){
 	// Open the file and erase the contents if any
 	$fp = fopen($lockStateLocation, "w");
 
+	echo "<pre>";
+	print_r(["newLockState", $newLockState]);
+	echo "</pre>";
+
 	// Write the data to the file
 	// CODE INJECTION WARNING!
   	fwrite($fp, "<?php\n\$lockState='$newLockState';\n?>");
@@ -128,14 +132,25 @@ function changeLockState(){
   	fclose($fp);
 }
 
+	echo "<pre>";
+	print_r($currentWallet);
+	echo "</pre>";
+
 	include("/home/stakebox/UI/version.php");
 	include("/home/stakebox/UI/primary".$currentWallet."address.php");
+
 	if (!file_exists("/home/stakebox/UI/".$currentWallet."lockstate.php")) {
 		try {
+			echo "<pre>";
+			print_r(["try"]);
+			echo "</pre>";
 			$coin->walletlock();
 			$newLockState = "Locked";
 			changeLockState();
 		} catch(Exception $e) {
+			echo "<pre>";
+			print_r(["catch", $e]);
+			echo "</pre>";
 			$lockState = "Not Encrypted";
 			$newLockState = "Not Encrypted";
 			changeLockState();
