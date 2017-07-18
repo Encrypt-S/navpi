@@ -95,7 +95,7 @@ if ($currentWallet == NavCoin){
 	<?php endif; ?>
 		</p></p>
 	<?php if($currentVersion != $newestVersion):?>
-		<a href='update' class='btn btn-default' role='button'>A new update to the WebUI is available, click to get it.</a>
+		<!--<a href='update' class='btn btn-default' role='button'>A new update to the WebUI is available, click to get it.</a>-->
 	<?php endif; ?>
 	</div>
      <?php if(file_exists("/home/stakebox/UI/".$currentWallet."notes.php")){
