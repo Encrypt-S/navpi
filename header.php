@@ -29,6 +29,10 @@
 		$_SESSION['currentWallet'] = $currentWallet;
 	}
 
+	if (!isset($_SESSION['lockStateChecked']) || empty($_SESSION['lockStateChecked'])) {
+		$_SESSION['lockStateChecked'] = false;
+	}
+
 	$coinu = $wallets[$currentWallet];
 
 	$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
@@ -139,7 +143,7 @@ function changeLockState(){
 	include("/home/stakebox/UI/version.php");
 	include("/home/stakebox/UI/primary".$currentWallet."address.php");
 
-	if (!file_exists("/home/stakebox/UI/".$currentWallet."lockstate.php")) {
+	if (!$_SESSION['lockStateChecked']) {
 		try {
 			echo "<pre>";
 			print_r(["try"]);
@@ -155,6 +159,7 @@ function changeLockState(){
 			$newLockState = "Not Encrypted";
 			changeLockState();
 		}
+		$_SESSION['lockStateChecked'] = true;
 	}
 	else {
 		include("/home/stakebox/UI/".$currentWallet."lockstate.php");
