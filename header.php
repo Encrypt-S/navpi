@@ -160,6 +160,7 @@ function changeLockState(){
 			changeLockState();
 		}
 		$_SESSION['lockStateChecked'] = true;
+		include("/home/stakebox/UI/".$currentWallet."lockstate.php");
 	}
 	else {
 		include("/home/stakebox/UI/".$currentWallet."lockstate.php");
