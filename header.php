@@ -50,17 +50,17 @@
 	$priceBtc = $data[0]->price_btc;
 	$priceUsd = $data[0]->price_usd;
 
-	echo "<pre>";
-	print_r($data);
-	echo "</pre>";
-
-	echo "<pre>";
-	print_r($data[0]);
-	echo "</pre>";
-
-	echo "<pre>";
-	print_r([$priceBtc, $priceUsd]);
-	echo "</pre>";
+	// echo "<pre>";
+	// print_r($data);
+	// echo "</pre>";
+	//
+	// echo "<pre>";
+	// print_r($data[0]);
+	// echo "</pre>";
+	//
+	// echo "<pre>";
+	// print_r([$priceBtc, $priceUsd]);
+	// echo "</pre>";
 	/*
 	// fetch fiat value of BTC
 	$curl = curl_init();
@@ -209,7 +209,7 @@ function changeLockState(){
 					<li><a href="help">Help</a></li>
 				</ul>
 				<div class="navbar-right">
-					<p class="navbar-text"><?php 	echo "Current price is <b id='price'>{$price}</b> BTC"; ?></p>
+					<p class="navbar-text"><?php 	echo "Current price is <b id='price'>{$priceBtc}</b> BTC"; ?></p>
 					<!--
 					<p class="navbar-text">Select Wallet:</p>
 					<ul class="nav navbar-nav">
