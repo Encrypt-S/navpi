@@ -83,3 +83,13 @@ It is recommended to use Ethernet as WiFi can be very slow to sync, but if you m
 - Write down your new password.
 
 # Backup your wallet
+
+The backup option through the UI isn't working due to a permissions issue. It's recommended that you encrypt your wallet before creating the backup.
+
+- Boot to the Raspberry Pi GUI Operating System.
+- Open Terminal.
+- In terminal type `sudo cp /home/pi/.navcoin4/wallet.dat /home/pi/Desktop/wallet.dat` and press enter.
+- Type in the default sudo password `navpi101` or your own password if you have changed it.
+- You should now see wallet.dat appear on the desktop.
+- Save this file to another location like a USB drive.
+- Make multiple backups to protect against data corruption.
