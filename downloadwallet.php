@@ -1,10 +1,10 @@
 <?php
 include ("header.php");
 include ("pass.php");
-$destination = "/var/www/html/webui/WebUI/".$currentWallet."wallet.dat";
+$filename = time() . "_wallet.dat";
+$destination = "/home/stakebox/UI/" . $filename;
 $coin->backupwallet($destination);
-exec("sudo chmod g+r /var/www/html/webui/WebUI/".$currentWallet."wallet.dat");
-header("Location: http://".$_SERVER['SERVER_NAME']."/".$currentWallet."wallet.dat");
+exec("sudo chmod g+r " . $destination);
+header("Location: http://" . $_SERVER['SERVER_NAME']."/" . $filename);
 exit;
 ?>
-
