@@ -4,7 +4,7 @@ include ("pass.php");
 $destination = $_POST['destination'];
 ?>
 
-<?php 
+<?php
 try {
 	$coin->backupwallet($destination);
 	echo "<p class='bg-success'><b>You have successfully backed your wallet up to $destination.</b></p> ";
