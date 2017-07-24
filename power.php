@@ -34,7 +34,7 @@ if ($status == "reboot"){
     changeLockState();
   }
     //exec("python /home/stakebox/UI/libs/reboot.py");
-    exec("sudo reboot now");
+    exec("sudo shutdown -r now");
     print '<h2>Your StakeBox is restarting ...</h2>';
 } else if ($status == "shutdown"){
   //exec("python /home/stakebox/UI/libs/shutdown.py");
