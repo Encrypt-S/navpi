@@ -2,7 +2,7 @@
 include ("header.php");
 include ("pass.php");
 $filename = "wallet.dat";
-$destination = "/home/pi/Desktop/" . $filename;
+$destination = "/home/pi/Desktop/backup/" . $filename;
 ?>
 
 <?php
