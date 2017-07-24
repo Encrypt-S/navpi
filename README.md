@@ -8,9 +8,20 @@ http://www.navcoin.org/downloads
 
 Below are some basic security configurations which you might want to implement when setting up your NavPi. The NavPi will work immediately if you simply burn the img to the SD card, plug it into your network and turn it on.
 
-However, because we ship these with some default settings, we do recommend taking the following precautions.
+## Flashing the image to your SD Card
+### OSX
 
-# Defaults
+- Format the SD card choosing FAT (MSDOS) format and GUID Partition Map Schema.
+- Download and install Etcher: https://etcher.io
+- Follow Etchers instructions on how to burn the Nav Pi img to the SD Card.
+
+### Windows & Linux
+
+These should be straight forward, just follow the official documentation:
+
+https://www.raspberrypi.org/documentation/installation/installing-images
+
+## Defaults
 
 | Item         | Value        |
 |:-------------|:-------------|
@@ -18,7 +29,9 @@ However, because we ship these with some default settings, we do recommend takin
 | Unix Password | navpi101 |
 | Web Password  | nav |
 
-# Setup
+Because we ship the image with some default settings, we do recommend taking the following precautions.
+
+## Setup
 
 SSH is disabled for security purposes, so any configuration you want to do must be done directly on the device.
 
@@ -27,7 +40,7 @@ SSH is disabled for security purposes, so any configuration you want to do must 
 - Plug in Screen, Keyboard & Mouse.
 - Power on Raspberry Pi.
 
-# Enable WiFi
+## Enable WiFi
 
 It is recommended to use Ethernet as WiFi can be very slow to sync, but if you must use WiFi you can set it up via the graphical user interface on the device.
 
@@ -35,7 +48,7 @@ It is recommended to use Ethernet as WiFi can be very slow to sync, but if you m
 - Right click on the network icon in the top right task bar.
 - Add your WiFi configuration.
 
-# Lock Down NavPi Web Access to IP Address
+## Lock Down NavPi Web Access to IP Address
 
 - Boot to the Raspberry Pi GUI Operating System.
 - Open Terminal.
@@ -45,7 +58,7 @@ It is recommended to use Ethernet as WiFi can be very slow to sync, but if you m
 - Save and close the file.
 - In terminal type `sudo service apache2 reload` and press enter.
 
-# Change the Default Unix Password
+## Change the Default Unix Password
 
 - Boot to the Raspberry Pi GUI Operating System.
 - Open Terminal.
@@ -55,7 +68,7 @@ It is recommended to use Ethernet as WiFi can be very slow to sync, but if you m
 - Confirm your new password.
 - Write down your new password.
 
-# Find the IP Address of your NavPi
+## Find the IP Address of your NavPi
 
 - Boot to the Raspberry Pi GUI Operating System.
 - Open Terminal.
@@ -65,7 +78,7 @@ It is recommended to use Ethernet as WiFi can be very slow to sync, but if you m
 - In the address bar of your internet browser type in the inet address discovered by ifconfig on the raspberry pi.
 - Log into the NavPi Web Interface using the default password `nav`.
 
-# Change the Default Web Interface Password
+## Change the Default Web Interface Password
 
 - Log into the Web Interface of the NavPi.
 - Click on the `Control` menu item
@@ -74,7 +87,7 @@ It is recommended to use Ethernet as WiFi can be very slow to sync, but if you m
 - Confirm your new password.
 - Write down your new password.
 
-# Encrypt Your wallet
+## Encrypt Your wallet
 
 - Log into the Web Interface of the NavPi.
 - Click on the `Control` menu item.
@@ -84,7 +97,11 @@ It is recommended to use Ethernet as WiFi can be very slow to sync, but if you m
 
 # Backup your wallet
 
-The backup option through the UI isn't working due to a permissions issue. It's recommended that you encrypt your wallet before creating the backup.
+You can back up your wallet using the GUI but the file will be written to the folder /home/pi/Desktop/backup which can be found on the default users desktop.
+
+You will need to plug in a screen, keyboard and mouse, then save the generated wallet.dat file to a USB thumb drive.
+
+Or you can back up the wallet.dat file manually:
 
 - Boot to the Raspberry Pi GUI Operating System.
 - Open Terminal.
@@ -93,3 +110,13 @@ The backup option through the UI isn't working due to a permissions issue. It's 
 - You should now see wallet.dat appear on the desktop.
 - Save this file to another location like a USB drive.
 - Make multiple backups to protect against data corruption.
+
+## Creating a backup image
+
+### OSX
+
+- Create a .dmg of the whole SD Card using disk utility.
+- Convert the dmg to an img from terminal:
+`hdiutil convert foo.dmg -format UDTO -o bar.img`
+
+This .img file can now be burned to a new SD Card using Etcher.
