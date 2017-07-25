@@ -2,8 +2,10 @@
 deny from all
 </Files>
 Options -Indexes
-DirectoryIndex index.php       
+DirectoryIndex index.php
 order deny,allow
 RewriteEngine On
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://%{SERVER_ADDR}/$1 [R,L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.php [NC,L]
