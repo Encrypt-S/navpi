@@ -68,6 +68,34 @@ It is recommended to use Ethernet as WiFi can be very slow to sync, but if you m
 - Confirm your new password.
 - Write down your new password.
 
+## Create a new SSL certificate
+
+The NavPi ships with a default ssl cetificate installed, but you will want to generate a new one when you set it up.
+
+Open terminal and paste in the following command:
+
+`sudo openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -out /etc/apache2/ssl/navpi-ssl.crt -keyout /etc/apache2/ssl/navpi-ssl.key`
+
+When you're prompted, fill out the details with your own eg.
+
+Country Name: NZ
+State or Province Name: Auckland
+Locality Name: Auckland
+Organization Name: Nav Coin
+Organizational Unit Name: Nav Pi
+Common Name: my.navpi.org
+Email Address: admin@navcoin.org
+
+Then we need to flush and reload apache:
+
+`sudo systemctl daemon-reload`
+
+`sudo service apache2 reload`
+
+Whenever you browse to your NavPi's ip address, it will force HTTPS using this new certificate.
+
+Since it's a self signed certificate, your browser will still complain that it is insecure, but all communication to the NavPi through your browser will be encrypted so no one can intercept your passwords.
+
 ## Find the IP Address of your NavPi
 
 - Boot to the Raspberry Pi GUI Operating System.
@@ -113,6 +141,8 @@ Or you can back up the wallet.dat file manually:
 
 ## Creating a backup image
 
+Once you've done all this setup, it is worth making a backup image of the SD card so if it fails, you can easily restore to this point.
+
 ### OSX
 
 - Create a .dmg of the whole SD Card using disk utility.
@@ -120,3 +150,5 @@ Or you can back up the wallet.dat file manually:
 `hdiutil convert foo.dmg -format UDTO -o bar.img`
 
 This .img file can now be burned to a new SD Card using Etcher.
+
+### Windows & Linux
