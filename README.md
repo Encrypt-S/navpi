@@ -79,11 +79,17 @@ Open terminal and paste in the following command:
 When you're prompted, fill out the details with your own eg.
 
 Country Name: NZ
+
 State or Province Name: Auckland
+
 Locality Name: Auckland
+
 Organization Name: Nav Coin
+
 Organizational Unit Name: Nav Pi
+
 Common Name: my.navpi.org
+
 Email Address: admin@navcoin.org
 
 Then we need to flush and reload apache:
