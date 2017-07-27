@@ -131,18 +131,9 @@ Since it's a self signed certificate, your browser will still complain that it i
 
 # Backup your wallet
 
-You can back up your wallet using the GUI but the file will be written to the folder /home/pi/Desktop/backup which can be found on the default users desktop.
-
-You will need to plug in a screen, keyboard and mouse, then save the generated wallet.dat file to a USB thumb drive.
-
-Or you can back up the wallet.dat file manually:
-
-- Boot to the Raspberry Pi GUI Operating System.
-- Open Terminal.
-- In terminal type `sudo cp /home/pi/.navcoin4/wallet.dat /home/pi/Desktop/wallet.dat` and press enter.
-- Type in the default sudo password `navpi101` or your own password if you have changed it.
-- You should now see wallet.dat appear on the desktop.
-- Save this file to another location like a USB drive.
+- Log into the Web Interface of the NavPi.
+- Click on the `Control` menu item.
+- In the `Security` section, type your desired password into the text field next to the `Backup Wallet` button.
 - Make multiple backups to protect against data corruption.
 
 ## Creating a backup image
