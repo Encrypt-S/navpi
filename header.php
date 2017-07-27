@@ -146,7 +146,7 @@ function changeLockState(){
 			$signed = $coin->signmessage($address, "test message");
 			$newLockState = "Unlocked For Sending";
 			changeLockState();
-		} catch ($e) {
+		} catch (Exception $e) {
 			$newLockState = "Unlocked For Staking";
 			changeLockState();
 		}
