@@ -29,10 +29,6 @@
 		$_SESSION['currentWallet'] = $currentWallet;
 	}
 
-	if (!isset($_SESSION['lockStateChecked']) || empty($_SESSION['lockStateChecked'])) {
-		$_SESSION['lockStateChecked'] = false;
-	}
-
 	$coinu = $wallets[$currentWallet];
 
 	$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
@@ -134,31 +130,34 @@ function changeLockState(){
 	include("/home/stakebox/UI/version.php");
 	include("/home/stakebox/UI/primary".$currentWallet."address.php");
 
-	if (!$_SESSION['lockStateChecked']) {
+	$info = $coin->getinfo();
+
+	if (!isset($info->unlocked_until)) {
+		$lockState = "Not Encrypted";
+		$newLockState = "Not Encrypted";
+		changeLockState();
+	}
+
+	if ($info->unlocked_until && $info->unlocked_until > 0) {
+
+		$address = $coin->getaddressesbyaccount("")[0];
+
 		try {
-			$coin->walletlock();
-			$newLockState = "Locked";
+			$signed = $coin->signmessage($address, "test message");
+			$newLockState = "Unlocked For Sending";
 			changeLockState();
-		} catch(Exception $e) {
-			$lockState = "Not Encrypted";
-			$newLockState = "Not Encrypted";
+		} catch ($e) {
+			$newLockState = "Unlocked For Staking";
 			changeLockState();
 		}
-		$_SESSION['lockStateChecked'] = true;
-		include("/home/stakebox/UI/".$currentWallet."lockstate.php");
-	}
-	else {
-		include("/home/stakebox/UI/".$currentWallet."lockstate.php");
+
+	} else {
+		$newLockState = "Locked";
+		changeLockState();
 	}
 
-	$currentVersion = 'v1.0.1';
+	include("/home/stakebox/UI/".$currentWallet."lockstate.php");
 
-	if ($ref_tag != $current_tag){
-	    $uptodate = "update available";
-	}
-	  else{
-	    $uptodate = "up to date";
-	}
 ?>
 
 <html><head><title><?php echo $price; echo " BTC/"; echo $ticker;?></title>
