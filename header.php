@@ -132,13 +132,13 @@ function changeLockState(){
 
 	$info = $coin->getinfo();
 
-	if (!isset($info->unlocked_until)) {
+	if (!isset($info['unlocked_until'])) {
 		$lockState = "Not Encrypted";
 		$newLockState = "Not Encrypted";
 		changeLockState();
 	}
 
-	if ($info->unlocked_until && $info->unlocked_until > 0) {
+	if ($info['unlocked_until'] && $info['unlocked_until'] > 0) {
 
 		$address = $coin->getaddressesbyaccount("")[0];
 
