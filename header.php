@@ -131,15 +131,21 @@ include("/home/stakebox/UI/version.php");
 include("/home/stakebox/UI/primary".$currentWallet."address.php");
 
 try {
-	$info = $coin->getinfo();
+	$coinGetInfo = $coin->getinfo();
+} catch(Exception $e) {
+	$newLockState = "Locked";
+	changeLockState();
+	$coinGetInfo = false;
+}
 
-	if (!isset($info['unlocked_until'])) {
+if($coinGetInfo) {
+	if (!isset($coinGetInfo['unlocked_until'])) {
 		$lockState = "Not Encrypted";
 		$newLockState = "Not Encrypted";
 		changeLockState();
 	}
 
-	if ($info['unlocked_until'] && $info['unlocked_until'] > 0) {
+	if ($coinGetInfo['unlocked_until'] && $coinGetInfo['unlocked_until'] > 0) {
 
 		$address = $coin->getaddressesbyaccount("")[0];
 
@@ -156,10 +162,9 @@ try {
 		$newLockState = "Locked";
 		changeLockState();
 	}
-} catch(Exception $e) {
-	$newLockState = "Locked";
-	changeLockState();
 }
+
+
 
 
 include("/home/stakebox/UI/".$currentWallet."lockstate.php");
