@@ -157,8 +157,9 @@ if($coinGetInfo) {
 			$newLockState = "Unlocked For Staking";
 			changeLockState();
 		}
+	}
 
-	} else {
+	if ($coinGetInfo['unlocked_until'] && $coinGetInfo['unlocked_until'] === 0) {
 		$newLockState = "Locked";
 		changeLockState();
 	}
