@@ -127,9 +127,10 @@ function changeLockState(){
   	fclose($fp);
 }
 
-	include("/home/stakebox/UI/version.php");
-	include("/home/stakebox/UI/primary".$currentWallet."address.php");
+include("/home/stakebox/UI/version.php");
+include("/home/stakebox/UI/primary".$currentWallet."address.php");
 
+try {
 	$info = $coin->getinfo();
 
 	if (!isset($info['unlocked_until'])) {
@@ -155,8 +156,13 @@ function changeLockState(){
 		$newLockState = "Locked";
 		changeLockState();
 	}
+} catch(Exception $e) {
+	$newLockState = "Locked";
+	changeLockState();
+}
 
-	include("/home/stakebox/UI/".$currentWallet."lockstate.php");
+
+include("/home/stakebox/UI/".$currentWallet."lockstate.php");
 
 ?>
 
