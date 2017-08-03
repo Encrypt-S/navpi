@@ -147,7 +147,7 @@ if($coinGetInfo) {
 
 	if ($coinGetInfo['unlocked_until'] && (int) $coinGetInfo['unlocked_until'] > 0) {
 
-		echo "<br /><br /><br /><br /> <pre>" .$coinGetInfo['unlocked_until']. "</pre>"
+		echo "<br /><br /><br /><br /> <pre>" .$coinGetInfo['unlocked_until']. "</pre>";
 
 		$address = $coin->getaddressesbyaccount("")[0];
 
