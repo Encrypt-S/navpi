@@ -48,13 +48,22 @@ It is recommended to use Ethernet as WiFi can be very slow to sync, but if you m
 - Right click on the network icon in the top right task bar.
 - Add your WiFi configuration.
 
-## Lock Down NavPi Web Access to IP Address
+## Lock Down NavPi Web Access to local IP Addresses
+
+The NavPi is already locked down to ip address ranges:
+
+192.168.x.x
+172.16.x.x
+10.10.x.x
+
+This should prevent anyone accessing the Web UI from outside of your local network. If your local network is on a different IP range to these defaults or you want to lock web access down to a particular IP address, then do the following:
 
 - Boot to the Raspberry Pi GUI Operating System.
 - Open Terminal.
 - In terminal type `sudo leafpad /etc/apache2/sites-available/navpi.conf` and press enter.
-- Add a # symbol to the beginning of the line `Require all granted` making it `#Require all granted`.
-- Remove the # symbol from the beginning of the line `#Require ip XXX.XXX.XXX.XXX` and replace `XXX.XXX.XXX.XXX` with the IP Address of the device you wish to access the web interface of the NavPi from (eg. 192.168.1.10).
+- Find the `<VirtualHost *:80>` section.
+- Add, Remove or Modify the lines `Require ip XXX.XXX` to be the IP address or range you want to allow.
+- Make the same changes to the `Require ip` lines in the `<VirtualHost *:443>` section.
 - Save and close the file.
 - In terminal type `sudo service apache2 reload` and press enter.
 
@@ -133,8 +142,20 @@ Since it's a self signed certificate, your browser will still complain that it i
 
 - Log into the Web Interface of the NavPi.
 - Click on the `Control` menu item.
-- In the `Security` section, type your desired password into the text field next to the `Backup Wallet` button.
+- In the `Security` section, click the `Backup Wallet` button.
+- This will download to your computer.
 - Make multiple backups to protect against data corruption.
+
+# Restoring your wallet
+
+- Boot to the Raspberry Pi GUI Operating System.
+- Open Terminal.
+- Drag the wallet.dat file from your USB memory stick to the desktop of your navpi.
+- Type the command `sudo mv /home/pi/Desktop/wallet.dat /home/stakebox/.navcoin4/wallet.dat` and press enter.
+- Type in your sudo password or if you haven't changed it `navpi101` and press enter.
+- Change ownership of the wallet.dat file so the user running the navcoin daemon can access it.
+- Type the command `sudo chown www-data:www-data /home/stakebox/.navcoin4/wallet.dat` and press enter.
+- Reboot the navpi by typing `sudo reboot now` and pressing enter
 
 ## Creating a backup image
 
