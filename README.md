@@ -169,4 +169,10 @@ Once you've done all this setup, it is worth making a backup image of the SD car
 
 This .img file can now be burned to a new SD Card using Etcher.
 
-### Windows & Linux
+## Updating the UI
+
+- Boot to the Raspberry Pi GUI Operating System.
+- Open Terminal.
+- Type `cd /home/stakebox/UI` and press enter.
+- Type `git pull` and press enter.
+- You will receive the UI update which should fix the incorrect display which is saying your stakebox is locked.
