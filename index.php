@@ -73,7 +73,7 @@ if ($currentWallet == NavCoin){
 <div class="well">
 <div class="row">
 	<div class="col-lg-7">
-	<p> Your main wallet address is <?php print_r($address); ?>.
+	<p> Your main wallet address is: <input type="text" name="main_wallet_address" value="<?php print_r($address); ?>" disabled readonly />
 	<p>The network is currently on block <?php print_r($coin->getblockcount()); ?>.
 	<?php if ($currentWallet == NavCoin): ?>
 		<?php echo "<p><b>Stake report</b></p><p>Last 24h: {$stakereport['Last 24H']} NAV</p><p>Last 7d: {$stakereport['Last 7 Days']} NAV</p><p>Last 30d: {$stakereport['Last 30 Days']} NAV</p><p>Last 365d: {$stakereport['Last 365 Days']} NAV</p>" ?>
