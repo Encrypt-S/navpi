@@ -124,6 +124,17 @@ Since it's a self signed certificate, your browser will still complain that it i
 - Press enter, or click the `Encrypt Wallet` button.
 - Write down your new password.
 
+## Unlock for staking
+
+Whenever you reboot your device, you need to make sure it is unlocked for staking to earn your rewards.
+
+- Log into the Web Interface of the NavPi.
+- On the home page click the button that says `Your Wallet Is Locked, Click To Change`.
+- Enter your password into the box next to where it says `Unlock for Staking Only`.
+- Press enter, or click the `Unlock for Staking Only` button.
+- Go back to the home page and the button should now say `Your Wallet Is Unlocked For Staking, Click To Change`.
+- You are all ready to earn staking rewards now.
+
 # Backup your wallet
 
 - Log into the Web Interface of the NavPi.
