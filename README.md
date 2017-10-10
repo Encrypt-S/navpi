@@ -2,13 +2,16 @@
 
 This is the official github repository for the NAV Coin Stake Box. This repository is the source code behind the raspberry pi image which runs the navcoin daemon and a PHP based web wallet.
 
-You can download the raspberry pi image from our website
+You can download the raspberry pi image from our website:
 
 http://www.navcoin.org/downloads
 
 Below are some basic security configurations which you might want to implement when setting up your NavPi. The NavPi will work immediately if you simply burn the img to the SD card, plug it into your network and turn it on.
 
 ## Flashing the image to your SD Card
+
+If you purchased your NavPi from our store, you can skip straight to the [setup section](#setup) since we have already flashed the NavPi image onto the device for you.
+
 ### OSX
 
 - Format the SD card choosing FAT (MSDOS) format and GUID Partition Map Schema.
@@ -35,8 +38,6 @@ Because we ship the image with some default settings, we do recommend taking the
 
 SSH is disabled for security purposes, so any configuration you want to do must be done directly on the device.
 
-- Write img to SD Card.
-- Insert SD Cart into Raspberry Pi.
 - Plug in Screen, Keyboard & Mouse.
 - Power on Raspberry Pi.
 
@@ -61,9 +62,8 @@ This should prevent anyone accessing the Web UI from outside of your local netwo
 - Boot to the Raspberry Pi GUI Operating System.
 - Open Terminal.
 - In terminal type `sudo leafpad /etc/apache2/sites-available/navpi.conf` and press enter.
-- Find the `<VirtualHost *:80>` section.
+- Find the `<VirtualHost *:443>` section.
 - Add, Remove or Modify the lines `Require ip XXX.XXX` to be the IP address or range you want to allow.
-- Make the same changes to the `Require ip` lines in the `<VirtualHost *:443>` section.
 - Save and close the file.
 - In terminal type `sudo service apache2 reload` and press enter.
 
@@ -85,23 +85,9 @@ Open terminal and paste in the following command:
 
 `sudo openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -out /etc/apache2/ssl/navpi-ssl.crt -keyout /etc/apache2/ssl/navpi-ssl.key`
 
-When you're prompted, fill out the details with your own eg.
+When you're prompted, fill in each of the details with your own or just press the enter key as these details are not required for a privately used ssl key.
 
-Country Name: NZ
-
-State or Province Name: Auckland
-
-Locality Name: Auckland
-
-Organization Name: Nav Coin
-
-Organizational Unit Name: Nav Pi
-
-Common Name: my.navpi.org
-
-Email Address: admin@navcoin.org
-
-Then we need to flush and reload apache:
+Once you've generated the ssl key we need to flush and reload apache:
 
 `sudo systemctl daemon-reload`
 
