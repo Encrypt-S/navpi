@@ -187,6 +187,6 @@ This .img file can now be burned to a new SD Card using Etcher.
 - Type `sudo rm /usr/local/bin/navcoind` and press enter.
 - Type `sudo mv /home/stakebox/navcoin-X.X.X/bin/navcoind /usr/local/bin/navcoin` (replacing X.X.X with the version number you just downloaded) and press enter.
 - Type `sudo chown pi:pi /usr/local/bin/navcoind` and press enter.
-- Type `sudo chmod 777 /usr/local/bin/navcoind` and press enter.
+- Type `sudo chmod 775 /usr/local/bin/navcoind` and press enter.
 - Type `sudo reboot now` and press enter.
 - When your device reboots it will be running the latest version.
