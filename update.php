@@ -4,6 +4,8 @@ include ("pass.php");
 $walletDir = "/home/stakebox/wallets/".$currentWallet;
 ?>
 
+TEST UPDATER
+
 <div style="padding: 5px 30px 0px;">
     <div class="row">
         <div class="col-lg-2">
@@ -26,8 +28,8 @@ $status = $_POST["status"];
 
 if ($status == "webui"){
 
-    exec("cd /home/stakebox/UI && git pull"); 
-    print '<h2>You have updated the UI</h2>';
+    exec("cd /home/stakebox/UI && git pull");
+    print '<h2>You have updated the UI/h2>';
 
 }
 if ($status == "wallet"){
