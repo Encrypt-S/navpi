@@ -20,7 +20,7 @@ $status = $_POST["status"];
 if ($status == "webui"){
 
     exec("cd /home/stakebox/UI && git pull");
-    print '<h2>You have updated the UI/h2>';
+    print '<h2>You have updated the UI</h2>';
 
 }
 if ($status == "wallet"){
