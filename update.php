@@ -4,6 +4,8 @@ include ("pass.php");
 $walletDir = "/home/stakebox/wallets/".$currentWallet;
 ?>
 
+<h2>Update Test</h2>
+
 <div style="padding: 5px 30px 0px;">
     <div class="row">
         <div class="col-lg-2">
@@ -21,13 +23,6 @@ if ($status == "webui"){
 
     exec("cd /home/stakebox/UI && git pull");
     print '<h2>You have updated the UI</h2>';
-
-}
-if ($status == "wallet"){
-
-    chdir($walletDir);
-    exec("git pull");
-    print '<h2>You have updated the current wallet. Reboot now in order to use the new version.</h2>';
 
 }
 ?>
