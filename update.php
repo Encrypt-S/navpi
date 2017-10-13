@@ -4,8 +4,6 @@ include ("pass.php");
 $walletDir = "/home/stakebox/wallets/".$currentWallet;
 ?>
 
-<h2>Update Test</h2>
-
 <div style="padding: 5px 30px 0px;">
     <div class="row">
         <div class="col-lg-2">
