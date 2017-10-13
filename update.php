@@ -4,21 +4,12 @@ include ("pass.php");
 $walletDir = "/home/stakebox/wallets/".$currentWallet;
 ?>
 
-TEST UPDATER
-
 <div style="padding: 5px 30px 0px;">
     <div class="row">
         <div class="col-lg-2">
             <form action="update" method="POST"><input type="hidden">
                 <div class="input-group">
      	            <button class='btn btn-default' type="submit" name="status" value="webui">Update WebUI</button>
-                </div><!-- /input-group -->
-            </form>
-        </div><!-- /.col-lg-2 -->
-        <div class="col-lg-2">
-            <form action="update" method="POST"><input type="hidden">
-                <div class="input-group">
-     	            <button class='btn btn-default' type="submit" name="status" value="wallet">Update Wallet Version</button>
                 </div><!-- /input-group -->
             </form>
         </div><!-- /.col-lg-2 -->
