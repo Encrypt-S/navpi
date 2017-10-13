@@ -21,22 +21,22 @@ $walletDir = "/home/stakebox/wallets/".$currentWallet;
             </form>
         </div><!-- /.col-lg-2 -->
     </div><!-- /.row -->
-<?php  
-$status = $_POST["status"];  
-  
+<?php
+$status = $_POST["status"];
+
 if ($status == "webui"){
- 
-    exec("cd /var/www/html/webui && git pull && chmod -R g+rwx /var/www/html/webui"); 
+
+    exec("cd /home/stakebox/UI && git pull"); 
     print '<h2>You have updated the UI</h2>';
- 
-}  
-if ($status == "wallet"){ 
-   
+
+}
+if ($status == "wallet"){
+
     chdir($walletDir);
-    exec("git pull"); 
+    exec("git pull");
     print '<h2>You have updated the current wallet. Reboot now in order to use the new version.</h2>';
 
-} 
+}
 ?>
 </div>
 </div>
