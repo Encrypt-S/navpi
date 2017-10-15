@@ -110,7 +110,7 @@ if ($currentWallet == NavCoin){
 				<?php if($vote === 'NOT_VOTED') { ?>
 					<b>You have not cast your vote yet.</b>
 				<?php } else { ?>
-					Currently your vote is set to <b><?php ucfirst($vote); ?></b>. If you want to change it, use the form below.
+					Currently your vote is set to <b><?php echo ucfirst($vote); ?></b>. If you want to change it, use the form below.
 				<?php } ?>
 			</p>
 			<p>
