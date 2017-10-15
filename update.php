@@ -12,7 +12,14 @@ $walletDir = "/home/stakebox/wallets/".$currentWallet;
                 <div class="input-group">
      	            <button class='btn btn-default' type="submit" name="status" value="webui">Update WebUI</button>
                 </div><!-- /input-group -->
-            </form><br /><br />
+            </form><br />
+            <?php
+            $status = $_POST["status"];
+            if ($status == "webui"){
+                echo exec("cd /home/stakebox/UI && /usr/bin/git pull 2>&1");
+                print '<h3>You have updated the User Interface</h3>';
+            }
+            ?>
         </div><!-- /.col-lg-2 -->
     </div><!-- /.row -->
     <div class="row">
@@ -22,16 +29,6 @@ $walletDir = "/home/stakebox/wallets/".$currentWallet;
            <br /><br /><pre>sudo /home/stakebox/UI/libs/updater.sh</pre>
         </div>
     </div>
-<?php
-$status = $_POST["status"];
-
-if ($status == "webui"){
-
-    echo exec("cd /home/stakebox/UI && /usr/bin/git pull 2>&1");
-    print '<h2>You have updated the UI</h2>';
-
-}
-?>
 </div>
 </div>
 <?php include ("footer.php"); ?>
