@@ -1,6 +1,22 @@
 <?php
 include ("header.php");
 include ("pass.php");
+
+$updateFile = file_get_contents ('./update.json');
+$updateData = json_decode($updateFile, TRUE);
+if ($updateData) {
+	switch($updateData["code"]) {
+		case "UPDATE_INSTALLED":
+			echo "<br><p class='bg-success'><b>NOTICE: A new version of NavCoin has been installed. Click here to Apply the update and restart your device <a href='/applyupdate.php?updated=true' class='btn btn-default' style='margin:0;'>Apply Update</a></b></p>";
+			break;
+		default:
+			echo "<br><p class='bg-danger'><b>NOTICE: Something went wrong trying to update the NavCoin daemon. Click here to dismiss this message and restart your device <a href='/applyupdate.php?updated=false' class='btn btn-default' style='margin:0;'>Dismiss Notice</a>.</b></p>";
+			echo ('<pre>');
+			print_r ($updateData);
+			echo ('</pre>');
+	}
+}
+
 $info = $coin->getinfo();
 $y = array_reverse($info);
 $bal1 = $coin->getbalance();
