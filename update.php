@@ -17,6 +17,7 @@ $walletDir = "/home/stakebox/wallets/".$currentWallet;
             $status = $_POST["status"];
             if ($status == "webui"){
                 echo exec("cd /home/stakebox/UI && /usr/bin/git pull 2>&1");
+                echo "<br /><br />";
             }
             ?>
         </div><!-- /.col-lg-2 -->
