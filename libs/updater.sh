@@ -67,7 +67,7 @@ rm -rf /home/stakebox/navcoin-${installed}
 rm -rf /usr/local/bin/navcoind
 
 echo "Expanding new version"
-tar zxvf navcoin-${tag}-arm-linux-gnueabihf.tar.gz
+tar zxvf navcoin-${tag}-arm-linux-gnueabihf.tar.gz -C /home/stakebox/
 rm navcoin-${tag}-arm-linux-gnueabihf.tar.gz
 
 echo "Copying to the startup location"
