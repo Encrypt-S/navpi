@@ -19,7 +19,7 @@ $status = $_POST["status"];
 
 if ($status == "webui"){
 
-    exec("cd /home/stakebox/UI && /usr/bin/git pull");
+    echo exec("cd /home/stakebox/UI && /usr/bin/git pull 2>&1");
     print '<h2>You have updated the UI from www-data</h2>';
 
 }
