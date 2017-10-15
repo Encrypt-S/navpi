@@ -29,7 +29,7 @@ include ("pass.php");
         fclose($fileHandle);
       }
 
-      print_r("Updated Vote to " . ucfirst($_POST['vote']) . "<br><br>");
+      print_r("Updated Vote to " . ucfirst(strtolower($_POST['vote'])) . "<br><br>");
       print_r("Please restart to apply the new settings <a href='/applyupdate.php?updated=true' class='btn btn-default' style='margin:0;'>Restart</a>");
 
     }
