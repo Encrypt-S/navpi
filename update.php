@@ -17,7 +17,6 @@ $walletDir = "/home/stakebox/wallets/".$currentWallet;
             $status = $_POST["status"];
             if ($status == "webui"){
                 echo exec("cd /home/stakebox/UI && /usr/bin/git pull 2>&1");
-                print '<h3>You have updated the User Interface</h3>';
             }
             ?>
         </div><!-- /.col-lg-2 -->
