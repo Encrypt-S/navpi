@@ -9,7 +9,6 @@ now=$(date +"%m-%d-%Y %T")
 touch /home/stakebox/UI/update.json
 chmod 777 /home/stakebox/UI/update.json
 chown pi:www-data /home/stakebox/UI/update.json
-echo "{\"last_run\":\"${now}\",\"success\":true,\"code\":\"UPDATE_INSTALLED\"}" > /home/stakebox/UI/update.json
 latest=$(curl https://api.github.com/repos/NAVCoin/navcoin-core/releases/latest)
 
 next=false
