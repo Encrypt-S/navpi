@@ -88,7 +88,7 @@ if ($currentWallet == NavCoin){
 </div>
 <div class="well">
 	<div class="row">
-		<div class="col-lg-3">
+		<div class="col-lg-5">
 			<h4>Network Vote</h4>
 			<p>
 				The Nav Coin Network is currently voting on introducing changes on the consensus protocol. As a participant in our network, we value your input and the decision ultimately is yours. Please cast your vote. <br><br>For more information on the proposal, please visit <a href="https://navcoin.org/community-fund">this link</a>
