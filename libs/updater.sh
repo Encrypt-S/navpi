@@ -71,7 +71,7 @@ tar zxvf navcoin-${tag}-arm-linux-gnueabihf.tar.gz -C /home/stakebox/
 rm navcoin-${tag}-arm-linux-gnueabihf.tar.gz
 
 echo "Copying to the startup location"
-cp navcoin-${tag}/bin/navcoind /usr/local/bin/navcoind
+cp /home/stakebox/navcoin-${tag}/bin/navcoind /usr/local/bin/navcoind
 chmod +x /usr/local/bin/navcoind
 chmod a+w /home/stakebox/UI
 echo "NavCoin has Successfully updated to the latest version"
