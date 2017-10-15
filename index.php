@@ -106,11 +106,11 @@ if ($currentWallet == NavCoin){
 			<p>
 				The Nav Coin Network is currently voting on introducing changes on the consensus protocol. As a participant in our network, we value your input and the decision ultimately is yours. Please cast your vote. For more information on the proposal, please visit <a href="https://navcoin.org/community-fund" style="color:black;text-decoration:underline;">this link</a>
 			</p>
-			<p style="text-weight: bold">
+			<p>
 				<?php if($vote === 'NOT_VOTED') { ?>
-					You haven't cast your vote yet.
+					<b>You have not cast your vote yet.</b>
 				<?php } else { ?>
-					Currently your vote is set to <?php ucfirst($vote); ?>. If you want to change it, use the form below.
+					Currently your vote is set to <b><?php ucfirst($vote); ?></b>. If you want to change it, use the form below.
 				<?php } ?>
 			</p>
 			<p>
