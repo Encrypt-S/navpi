@@ -63,7 +63,7 @@ if [ $wgetreturn -ne 0 ]; then
 fi
 
 echo "Removing old files"
-rm -rf /home/stakebox/navcoin-${installed} &
+rm -rf /home/stakebox/navcoin-${installed}
 rm -rf /usr/local/bin/navcoind
 
 echo "Expanding new version"
