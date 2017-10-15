@@ -90,7 +90,7 @@ if ($currentWallet == NavCoin){
 	<div class="row">
 		<div class="col-lg-5">
 			<?php
-
+			$configPath = "/home/stakebox/.navcoin4/navcoin.conf";
 			$configFile = file_get_contents($configPath);
 
 			if (strpos($configFile, "votefunding=1") && $voteNumber == 0) {
