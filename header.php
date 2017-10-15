@@ -165,8 +165,8 @@ if($coinGetInfo) {
 	}
 }
 
-
-
+$updateFile = file_get_contents ('./update.json');
+$updateData = json_decode($updateFile, TRUE);
 
 include("/home/stakebox/UI/".$currentWallet."lockstate.php");
 
@@ -244,6 +244,13 @@ include("/home/stakebox/UI/".$currentWallet."lockstate.php");
 <div class="container-fluid">
 <div class='content'>
 <div class="well">
+<?php
+if ($updateData) {
+	echo ('<pre> print the json ');
+	print_r ($updateData);
+	echo ('</pre>');
+}
+?>
 <?php
 	try {
 		$coininfo = $coin->getinfo();
