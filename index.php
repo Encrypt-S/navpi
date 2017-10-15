@@ -89,9 +89,29 @@ if ($currentWallet == NavCoin){
 <div class="well">
 	<div class="row">
 		<div class="col-lg-5">
+			<?php
+
+			$configFile = file_get_contents($configPath);
+
+			if (strpos($configFile, "votefunding=1") && $voteNumber == 0) {
+				$vote = "YES";
+			} else if (strpos($configFile, "votefunding=0") && $voteNumber == 1) {
+				$vote = "NO";
+			} else {
+				$vote = "NOT_VOTED";
+			}
+
+			?>
 			<h4>Network Vote</h4>
 			<p>
-				The Nav Coin Network is currently voting on introducing changes on the consensus protocol. As a participant in our network, we value your input and the decision ultimately is yours. Please cast your vote. <br><br>For more information on the proposal, please visit <a href="https://navcoin.org/community-fund">this link</a>
+				The Nav Coin Network is currently voting on introducing changes on the consensus protocol. As a participant in our network, we value your input and the decision ultimately is yours. Please cast your vote. <br><br>For more information on the proposal, please visit <a href="https://navcoin.org/community-fund" style="color:black;text-decoration:underline;">this link</a>
+			</p>
+			<p>
+				<?php if($vote === 'NOT_VOTED') { ?>
+					You haven't cast your vote yet.
+				<?php } else { ?>
+					Currently your vote is set to <?php ucfirst($vote); ?>. If you want to change it, use the form below.
+				<?php } ?>
 			</p>
 			<p>
 				Would you like the Nav Coin Network to update the staking rewards to fund a decentralised community fund to help grow the network?
@@ -99,11 +119,11 @@ if ($currentWallet == NavCoin){
 			<form name="sql-data" method="post" action="/updatevote">
 				<div>
 					<label for="voteYes">Yes</label>
-					<input type="radio" name="vote" value="YES" id="voteYes" />
+					<input type="radio" name="vote" value="YES" id="voteYes" <?php if($vote == "YES") echo "checked"; ?> />
 				</div>
 				<div>
 					<label for="voteNo">No</label>
-					<input type="radio" name="vote" value="NO" id="voteNo" />
+					<input type="radio" name="vote" value="NO" id="voteNo" <?php if($vote == "NO") echo "checked"; ?> />
 				</div>
 				<button class='btn btn-default' type="submit" name="submitVote" value="vote">Set Vote</button>
 			</form>
