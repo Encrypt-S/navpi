@@ -87,6 +87,30 @@ if ($currentWallet == NavCoin){
 </div>
 </div>
 <div class="well">
+	<div class="row">
+		<div class="col-lg-3">
+			<h4>Network Vote</h4>
+			<p>
+				The Nav Coin Network is currently voting on introducing changes on the consensus protocol. As a participant in our network, we value your input and the decision ultimately is yours. Please cast your vote. <br><br>For more information on the proposal, please visit <a href="https://navcoin.org/community-fund">this link</a>
+			</p>
+			<p>
+				Would you like the Nav Coin Network to update the staking rewards to fund a decentralised community fund to help grow the network?
+			</p>
+			<form name="sql-data" method="post" action="/updatevote">
+				<div>
+					<label for="voteYes">Yes</label>
+					<input type="radio" name="vote" value="YES" id="voteYes" />
+				</div>
+				<div>
+					<label for="voteNo">No</label>
+					<input type="radio" name="vote" value="NO" id="voteNo" />
+				</div>
+				<button class='btn btn-default' type="submit" name="submitVote" value="vote">Set Vote</button>
+			</form>
+		</div>
+	</div>
+</div>
+<div class="well">
 <div class="row">
 	<div class="col-lg-7">
 	<p> Your main wallet address is <?php print_r($address); ?>.
