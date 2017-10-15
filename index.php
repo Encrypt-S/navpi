@@ -93,9 +93,9 @@ if ($currentWallet == NavCoin){
 			$configPath = "/home/stakebox/.navcoin4/navcoin.conf";
 			$configFile = file_get_contents($configPath);
 
-			if (strpos($configFile, "votefunding=1") && $voteNumber == 0) {
+			if (strpos($configFile, "votefunding=1")) {
 				$vote = "YES";
-			} else if (strpos($configFile, "votefunding=0") && $voteNumber == 1) {
+			} else if (strpos($configFile, "votefunding=0")) {
 				$vote = "NO";
 			} else {
 				$vote = "NOT_VOTED";
