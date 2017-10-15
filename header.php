@@ -249,6 +249,16 @@ if ($updateData) {
 	echo ('<pre> print the json ');
 	print_r ($updateData);
 	echo ('</pre>');
+
+	switch($updateData["code"]) {
+		case "UPDATE_INSTALLED":
+			echo "<br><p class='bg-success'><b>NOTICE: A new version of NavCoin has been installed. Dismiss this message then restart your device to apply the update.</b></p>";
+			break;
+		default:
+		echo "<br><p class='bg-danger'><b>NOTICE: Something went wrong trying to update the NavCoin daemon. Dismiss this message then restart your device.</b></p>";
+
+	}
+
 }
 ?>
 <?php
