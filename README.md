@@ -174,6 +174,8 @@ This .img file can now be burned to a new SD Card using Etcher.
 - Type `git pull` and press enter.
 - You will receive any UI updates.
 
+If you have the latest version of the UI, you should be able to perform future updates by using the update button on the control page.
+
 ## Updating the Nav Coin Daemon
 
 - Boot to the Raspberry Pi GUI Operating System.
