@@ -10,10 +10,13 @@
 * Type: `sudo chmod -R g+s UI`
 * Type: `sudo /home/stakebox/UI/libs/updater.sh`
  * (You should see a download occur)
-* Open your browser and visit `127.0.0.1`
+* Open the web browser on the NavPi and visit `127.0.0.1`
 * You should see a notification reading: `NOTICE: A new version of NavCoin has been installed. Click here to Apply the update and restart your device`.
 * Click `Apply Update`
  * This will restart your NavPi
+
+
+**Note:** If you can't access `127.0.0.1` in the NavPi's web browser, you can perform the "enable localhost access" steps below, or access the UI from another computer to apply the update and reboot the device.
 
 ## Optional
 
