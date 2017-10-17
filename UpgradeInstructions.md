@@ -1,4 +1,4 @@
-## Updating from Version 4.0.1/4.0.2
+## Updating from Version 1.0.1/1.0.2
 
 * Plug a keyboard, mouse and screen into the NavPi
 * Open up a terminal
@@ -11,14 +11,17 @@
 * Type: `sudo /home/stakebox/UI/libs/updater.sh`
  * (You should see a download occur)
 * Open your browser and visit `127.0.0.1`
-* You should see a notification reading: `NOTICE: A new version of NavCoin has been installed. Click here to Apply the update and restart your device`. 
+* You should see a notification reading: `NOTICE: A new version of NavCoin has been installed. Click here to Apply the update and restart your device`.
 * Click `Apply Update`
  * This will restart your NavPi
 
 ## Optional
 
 ### Setup auto updates
-If you want to set up auto-updating for your NavPi:
+The update script checks for new versions and downloads them directly from our secure GitHub organisation. If you want to stick with manual updates, you can periodically run the updater script manually with the process above.
+
+Or if you want the updates to be automated, you can setup auto-updating for your NavPi which will check for a new version daily and install it if available:
+
 * In a terminal, type: `sudo crontab -e`
  * A text editor will open up in the terminal
 * Scroll to the bottom and type `0 0 * * * /home/stakebox/UI/libs/updater.sh`
