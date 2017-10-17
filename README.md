@@ -178,17 +178,6 @@ If you have the latest version of the UI, you should be able to perform future u
 
 ## Updating the Nav Coin Daemon
 
-- Boot to the Raspberry Pi GUI Operating System.
-- Open Terminal.
-- Type `sudo killall navcoind` and press enter.
-- Type your sudo password and press enter.
-- Type `cd /home/stakebox` and press enter.
-- Type `sudo rm -rf navcoin-X.X.X` (replacing X.X.X with the current version you're running) and press enter.
-- Type `sudo wget http://navcoin.org/files/navcoin-X.X.X/navcoin-X.X.X-arm-linux-gnueabihf.tar.gz` (replacing both instance of X.X.X with the version you're updating to) and press enter.
-- Type `sudo tar -zxvf navcoin-X.X.X-arm-linux-gnueabihf.tar.gz` (replacing X.X.X with the version number you just downloaded) and press enter.
-- Type `sudo rm /usr/local/bin/navcoind` and press enter.
-- Type `sudo mv /home/stakebox/navcoin-X.X.X/bin/navcoind /usr/local/bin/navcoin` (replacing X.X.X with the version number you just downloaded) and press enter.
-- Type `sudo chown pi:pi /usr/local/bin/navcoind` and press enter.
-- Type `sudo chmod 775 /usr/local/bin/navcoind` and press enter.
-- Type `sudo reboot now` and press enter.
-- When your device reboots it will be running the latest version.
+If you're upto date with the latest UI, you can run the following script manually:
+- `/home/stakebox/UI/libs/updater.sh`
+- Or you can add it to your sudo crontab to automatically check for and install new updates
