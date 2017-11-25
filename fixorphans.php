@@ -7,8 +7,8 @@ $status = $_POST["status"];
 
 if ($status == "zapwallettxes") {
   exec("killall navcoind");
-  exec("/usr/local/bin/navcoind -datadir=/home/stakebox/.navcoin4 -zapwallettxes");
-  print("<h2>Orphans have been fixed, wallet has restarted</h2>");
+  exec("/usr/local/bin/navcoind -datadir=/home/stakebox/.navcoin4 -zapwallettxes &");
+  print("<h2>Orphans are being fixed, navcoind is restarting</h2>");
 } else { ?>
   <h2>Fix Orphan Stakes</h2>
 
