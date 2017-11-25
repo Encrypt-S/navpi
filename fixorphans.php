@@ -15,7 +15,7 @@ if ($status == "zapwallettxes") {
   <p>If your balance is not displaying correctly it could be because some of your stakes have been orphaned.</p>
   <p>You can try to fix the orphaned stakes by clicking the button below. Be patient, it can take up to 15 minutes for your wallet to repair.</p>
 
-  <form action="power" method="POST"><input type="hidden">
+  <form action="fixorphans" method="POST"><input type="hidden">
       <div class="input-group">
         <button class='btn btn-default' type="submit" name="status" value="zapwallettxes">Fix Orphans</button>
       </div><!-- /input-group -->
