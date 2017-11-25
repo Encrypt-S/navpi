@@ -146,8 +146,12 @@ if($coinGetInfo) {
 	}
 	print("<pre>");
 	print_r($coinGetInfo);
-	print_r("> 0" . (int) $coinGetInfo['unlocked_until'] > 0);
-	print_r("=== 0" . (int) $coinGetInfo['unlocked_until'] === 0);
+  print("</pre>");
+	print("<pre>");
+	print_r((int) $coinGetInfo['unlocked_until'] > 0);
+  print("</pre>");
+	print("<pre>");
+	print_r((int) $coinGetInfo['unlocked_until'] === 0);
   print("</pre>");
 	if ($coinGetInfo['unlocked_until'] && (int) $coinGetInfo['unlocked_until'] > 0) {
 
