@@ -173,6 +173,8 @@ if($coinGetInfo) {
 		$newLockState = "Locked";
 		changeLockState();
 	}
+
+	print("<br />no conditions met");
 }
 
 include("/home/stakebox/UI/".$currentWallet."lockstate.php");
