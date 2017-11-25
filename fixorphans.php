@@ -3,7 +3,7 @@ include ("header.php");
 include ("pass.php");
 $walletDir = "/home/stakebox/wallets/".$currentWallet;
 
-$status = $_GET["status"];
+$status = $_POST["status"];
 
 if ($status == "zapwallettxes") {
   exec("killall navcoind");
