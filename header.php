@@ -144,7 +144,9 @@ if($coinGetInfo) {
 		$newLockState = "Not Encrypted";
 		changeLockState();
 	}
-
+	print("<pre>");
+	print_r($coinGetInfo);
+  print("</pre>");
 	if ($coinGetInfo['unlocked_until'] && (int) $coinGetInfo['unlocked_until'] > 0) {
 
 		$address = $coin->getaddressesbyaccount("")[0];
