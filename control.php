@@ -288,7 +288,7 @@ include ("pass.php");
                <form action="walletpassphrasechange" method="POST"><input type="hidden">
                   <div class="input-group">
                      <span class="input-group-btn">
-	                <button class='btn btn-default' type="submit" value="walletpassphrasechange">Change Wallet Password</button>
+	                <button class='btn btn-default' type="submit" value="walletpassphrasechange">Change Encryption Password</button>
 	             </span>
 	                <input class="form-control" type="password" name="old" placeholder="Old Password">
                   </div><!-- /input-group -->
