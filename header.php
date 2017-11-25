@@ -144,37 +144,24 @@ if($coinGetInfo) {
 		$newLockState = "Not Encrypted";
 		changeLockState();
 	}
-	print("<pre>");
-	print_r($coinGetInfo);
-  print("</pre>");
-	print("<pre>");
-	print_r((int) $coinGetInfo['unlocked_until'] > 0);
-  print("</pre>");
-	print("<pre>");
-	print_r((int) $coinGetInfo['unlocked_until'] === 0);
-  print("</pre>");
-	if (isset($coinGetInfo['unlocked_until']) && (int) $coinGetInfo['unlocked_until'] > 0) {
-		print("<br />first_if");
-		$address = $coin->getaddressesbyaccount("")[0];
 
+	if (isset($coinGetInfo['unlocked_until']) && (int) $coinGetInfo['unlocked_until'] > 0) {
+		$address = $coin->getaddressesbyaccount("")[0];
 		try {
 			$signed = $coin->signmessage($address, "test message");
 			$newLockState = "Unlocked For Sending";
 			changeLockState();
 		} catch (Exception $e) {
-			print("<br />catch");
 			$newLockState = "Unlocked For Staking";
 			changeLockState();
 		}
 	}
 
 	if (isset($coinGetInfo['unlocked_until']) && (int) $coinGetInfo['unlocked_until'] === 0) {
-		print("<br />second_if");
 		$newLockState = "Locked";
 		changeLockState();
 	}
 
-	print("<br />no conditions met");
 }
 
 include("/home/stakebox/UI/".$currentWallet."lockstate.php");
