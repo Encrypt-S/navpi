@@ -154,7 +154,7 @@ if($coinGetInfo) {
 	print_r((int) $coinGetInfo['unlocked_until'] === 0);
   print("</pre>");
 	if ($coinGetInfo['unlocked_until'] && (int) $coinGetInfo['unlocked_until'] > 0) {
-
+		print("<br />first_if");
 		$address = $coin->getaddressesbyaccount("")[0];
 
 		try {
@@ -162,12 +162,14 @@ if($coinGetInfo) {
 			$newLockState = "Unlocked For Sending";
 			changeLockState();
 		} catch (Exception $e) {
+			print("<br />catch");
 			$newLockState = "Unlocked For Staking";
 			changeLockState();
 		}
 	}
 
 	if ($coinGetInfo['unlocked_until'] && (int) $coinGetInfo['unlocked_until'] === 0) {
+		print("<br />second_if");
 		$newLockState = "Locked";
 		changeLockState();
 	}
