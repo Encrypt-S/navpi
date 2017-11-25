@@ -153,7 +153,7 @@ if($coinGetInfo) {
 	print("<pre>");
 	print_r((int) $coinGetInfo['unlocked_until'] === 0);
   print("</pre>");
-	if ($coinGetInfo['unlocked_until'] && (int) $coinGetInfo['unlocked_until'] > 0) {
+	if (isset($coinGetInfo['unlocked_until']) && (int) $coinGetInfo['unlocked_until'] > 0) {
 		print("<br />first_if");
 		$address = $coin->getaddressesbyaccount("")[0];
 
@@ -168,7 +168,7 @@ if($coinGetInfo) {
 		}
 	}
 
-	if ($coinGetInfo['unlocked_until'] && (int) $coinGetInfo['unlocked_until'] === 0) {
+	if (isset($coinGetInfo['unlocked_until']) && (int) $coinGetInfo['unlocked_until'] === 0) {
 		print("<br />second_if");
 		$newLockState = "Locked";
 		changeLockState();
