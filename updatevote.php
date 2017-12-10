@@ -15,12 +15,12 @@ include ("pass.php");
       $voteNumber = ($_POST["vote"] == "YES" ? 1 : 0);
       $configFile = file_get_contents($configPath);
 
-      if (!strpos($configFile, "votefunding=")) {
-        $newConfig = $configFile . PHP_EOL. "votefunding=" . $voteNumber;
-      } else if (strpos($configFile, "votefunding=1") && $voteNumber == 0) {
-        $newConfig = str_replace("votefunding=1", "votefunding=0", $configFile);
-      } else if (strpos($configFile, "votefunding=0") && $voteNumber == 1) {
-        $newConfig = str_replace("votefunding=0", "votefunding=1", $configFile);
+      if (!strpos($configFile, "stakervote=")) {
+        $newConfig = $configFile . PHP_EOL. "stakervote=" . $voteNumber;
+      } else if (strpos($configFile, "stakervote=1") && $voteNumber == 0) {
+        $newConfig = str_replace("stakervote=1", "stakervote=0", $configFile);
+      } else if (strpos($configFile, "stakervote=0") && $voteNumber == 1) {
+        $newConfig = str_replace("stakervote=0", "stakervote=1", $configFile);
       }
 
       if ($newConfig) {
