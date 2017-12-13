@@ -1,3 +1,3 @@
 <?php
-$notes='test';
+$notes='Enter your notes here';
 ?>

@@ -36,7 +36,7 @@ include ("pass.php");
 </div><!-- /.well -->
 
 <div class="well">
-   <b><a name="navtech">Navtech</a></b>
+   <b><a name="navtech">NAVTech</a></b>
       <div style="padding: 5px 15px 5px;">
          <div class="row">
             <div class="col-lg-2">
@@ -87,7 +87,7 @@ include ("pass.php");
                      <span class="input-group-btn">
 	                <button class='btn btn-default' type="submit" value="getaddressesbyaccount">Get Addresses By Account</button>
 	             </span>
-	                <input class="form-control" type="text" name="account" placeholder="Leave blank for default account" >
+	                <input class="form-control" type="text" name="account" placeholder="Leave blank to use the default account" >
                   </div><!-- /input-group -->
                </form>
             </div><!-- /.col-lg-5 -->
@@ -99,7 +99,7 @@ include ("pass.php");
                      <span class="input-group-btn">
                         <button class='btn btn-default' type="submit" value="getnewaddress">Get New Address</button>
                      </span>
-                        <input class="form-control" type="text" name="account" placeholder="Enter account you want to get a new address for.">
+                        <input class="form-control" type="text" name="account" placeholder="Enter the account you want to get a new address for">
                   </div><!-- /input-group -->
                </form>
             </div><!-- /.col-lg-6 -->
@@ -109,7 +109,7 @@ include ("pass.php");
                      <span class="input-group-btn">
 	                <button class='btn btn-default' type="submit" value="getaccount">Get Account</button>
 	             </span>
-	                <input class="form-control" type="text" name="address" placeholder="Address you would like to know the account for.">
+	                <input class="form-control" type="text" name="address" placeholder="Enter an address you would like to know the account for">
 	          </div><!-- /input-group -->
                </form>
             </div><!-- /.col-lg-6 -->
@@ -196,7 +196,7 @@ include ("pass.php");
                         <span class="input-group-btn">
 	                   <button class='btn btn-default' type="submit" value="listtransactions">List Transactions</button>
                         </span>
-	                   <input class="form-control" type="text" name="account" placeholder='Account:Use * for all leave blank for default account.'>
+	                   <input class="form-control" type="text" name="account" placeholder='Account: Use * for all accounts, leave blank for the default account.'>
 	             </div><!-- /input-group -->
             </div><!-- /.col-lg-6 -->
             <div class="col-lg-6">
@@ -248,7 +248,7 @@ include ("pass.php");
          </div><!-- /.row -->
          <div class="row">
             <div class="col-lg-6">
-               <input class="form-control" type="text" name="amount" placeholder="amount">
+               <input class="form-control" type="text" name="amount" placeholder="Amount">
             </div><!-- /.col-lg-6 -->
             <div class="col-lg-6">
                <input class="form-control" type="text" name="comment" placeholder="Comment">
@@ -278,7 +278,7 @@ include ("pass.php");
                      <span class="input-group-btn">
 	                <button class='btn btn-default' type="submit" value="encryptwallet">Encrypt Wallet</button>
 	             </span>
-                        <input class="form-control" type="password" name="password" placeholder="Enter password you would like to use">
+                        <input class="form-control" type="password" name="password" placeholder="Enter the password you would like to use">
                   </div><!-- /input-group -->
                </form>
             </div><!-- /.col-lg-8 -->
@@ -315,7 +315,7 @@ include ("pass.php");
                      <span class="input-group-btn">
                         <button class='btn btn-default' type="submit" value="unlockwallet">Unlock Wallet To Send</button>
                      </span>
-	                <input class="form-control" type="password" name="password" placeholder="password">
+	                <input class="form-control" type="password" name="password" placeholder="Password">
                   </div><!-- /input-group -->
                </form>
             </div><!-- /.col-lg-6 -->

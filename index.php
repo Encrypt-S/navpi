@@ -55,7 +55,7 @@ if ($currentWallet == NavCoin){
 		<h4><?php echo $longCurrency; ?> Value: <font color='green'><?php echo "{$symbol}{$fiatValue}"; ?></font></h4><br>
 		<div class="col-lg-8">
     	<form action="lockcontrol">
-       		<button class='btn btn-default btn-block'>Your Wallet Is <?php print($lockState)?> Click To Change</button>
+       		<button class='btn btn-default btn-block'>Your Wallet Is <?php print($lockState)?>Click To Change</button>
     	</form>
 		</div>
 	</div>
@@ -75,7 +75,7 @@ if ($currentWallet == NavCoin){
 			<form name="sql-data" method="post" action="<?php $_SERVER['PHP_SELF']?>">
 				<button class='btn btn-default' type="submit" name="show" value="show">Show private key</button>
 			</form>
-		<h4>wallet must be unlocked for sending, or not encrypted.</h4></center>
+		<h4>Wallet must be unlocked for sending, or not encrypted.</h4></center>
 		<?php
 		}
 		?>
