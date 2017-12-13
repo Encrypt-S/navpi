@@ -75,7 +75,7 @@ if ($currentWallet == NavCoin){
 			<form name="sql-data" method="post" action="<?php $_SERVER['PHP_SELF']?>">
 				<button class='btn btn-default' type="submit" name="show" value="show">Show private key</button>
 			</form>
-		<h4>wallet must be unlocked for sending, or not encrypted.</h4></center>
+		<h4>Wallet must be unlocked for sending, or not encrypted.</h4></center>
 		<?php
 		}
 		?>

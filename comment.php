@@ -1,12 +1,12 @@
-<?php 
+<?php
 include ("header.php");
 include ("pass.php");
 $txid = $_POST['txid'];
-	
+
 ?>
-<center><p>Add comment to transaction <?php echo $_POST['txid']; ?>
+<center><p>Add a comment to the transaction <?php echo $_POST['txid']; ?>
 <div class="panel panel-default">
-  
+
     <table class="table-hover table-condensed table-bordered table">
         <form action="addcomment" method="POST"><input type="hidden">
                 <tr>
