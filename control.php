@@ -17,7 +17,6 @@ include ("pass.php");
             <a href="allcommands" class='btn btn-default' role='button'>All Commands</a>
             <a href="setpass" class='btn btn-default' role='button'>Change UI Password</a>
             <a href="fixorphans" class='btn btn-default' role='button'>Fix Orphans</a>
-            <a href="reindex" class='btn btn-default' role='button'>Reindex</a>
          </div><!-- /.row -->
       </div><!-- /.padding -->
       <div style="padding: 5px 15px 5px;">
