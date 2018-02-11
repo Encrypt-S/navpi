@@ -25,7 +25,8 @@ $bal3 = abs($bal1 - $bal2);
 $bal4 = abs("{$y['stake']}");
 if($primary!=""){
 	$hasPrimary = false;
-	$addresses = $coin->getaddressesbyaccount("")[0];
+	$addresses = $coin->getaddressesbyaccount("");
+
 	foreach($addresses as $add){
 
 		echo "<br>" . $add;
@@ -39,14 +40,14 @@ if($primary!=""){
 	}else{
 		$address = $coin->getaddressesbyaccount("")[0];
 	}
-	echo "<br> 1" . $address;
+	echo "<br> 1 " . $address;
 }
 else{
 	$address = $coin->getaddressesbyaccount("")[0];
-	echo "<br> 2" . $address;
+	echo "<br> 2 " . $address;
 }
 
-echo "<br> 3" . $address;
+echo "<br> 3 " . $address;
 
 if ($currentWallet == NavCoin){
 	$stakinginfo = $coin->getstakinginfo();
