@@ -45,10 +45,15 @@ if($primary != ""){
 
 		$address = $coin->getaddressesbyaccount("")[0];
 		
-		// set the new primary address to the file system as per the rest of the app 
-		global $newPrimary;
-		$newPrimary = "";
-		changePrimary();
+		$primaryLocation = "/home/stakebox/UI/primary".$currentWallet."address.php";
+		// Open the file and erase the contents if any
+		$fp = fopen($primaryLocation, "w");
+		// Write the data to the file
+		// CODE INJECTION WARNING!
+		fwrite($fp, "<?php\n\$primary='';\n?>");	  	
+		// Close the file
+		fclose($fp);
+	
 
 	}
 	echo "<br> 1 " . $address;
