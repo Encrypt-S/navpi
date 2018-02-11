@@ -5,6 +5,8 @@ $primaryLocation = "/home/stakebox/UI/primary".$currentWallet."address.php";
 
 function changePrimary(){
 
+	echo "<br> help~!!!!!!";
+
 	global $primaryLocation;
 	global $newPrimary;
 	if(!file_exists("$primaryLocation")){

@@ -23,7 +23,7 @@ $bal1 = $coin->getbalance();
 $bal2 = $coin->getbalance("*", 0);
 $bal3 = abs($bal1 - $bal2);
 $bal4 = abs("{$y['stake']}");
-if($primary!=""){
+if($primary != ""){
 	$hasPrimary = false;
 	$addresses = $coin->getaddressesbyaccount("");
 
@@ -35,10 +35,18 @@ if($primary!=""){
 		}
 		echo "<br> Primary" . $hasPrimary;
 	}
-	if($hasPrimary){
+	if ($hasPrimary) {
 		$address = $primary;
-	}else{
+	} else {
+
+
 		$address = $coin->getaddressesbyaccount("")[0];
+		
+		// set the new primary address to the file system as per the rest of the app 
+		global $newPrimary;
+		$newPrimary = "";
+		changePrimary();
+
 	}
 	echo "<br> 1 " . $address;
 }
