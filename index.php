@@ -39,14 +39,14 @@ if($primary!=""){
 	}else{
 		$address = $coin->getaddressesbyaccount("")[0];
 	}
-	echo "<br>" . $address;
+	echo "<br> 1" . $address;
 }
 else{
 	$address = $coin->getaddressesbyaccount("")[0];
-	echo "<br>" . $address;
+	echo "<br> 2" . $address;
 }
 
-echo "<br>" . $address;
+echo "<br> 3" . $address;
 
 if ($currentWallet == NavCoin){
 	$stakinginfo = $coin->getstakinginfo();
