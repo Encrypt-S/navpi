@@ -91,16 +91,15 @@ if ($currentWallet == NavCoin){
 <div class="row">
 	<?php 
 		if ($showMainAddressChangedMessage == true)
-			echo "<font color='green'>
-			<h3>We detected that your Primary Address (the one displayed on the front page) was not one of the addresses in your wallet.dat, 
-			so we have swapped it for a new one. 
-			<br>This can occur when you replace the NavPi's wallet.dat after you have manually set the primary address.
-			</h3>
-			<h4>
-				<br>New Address: {$address}
-				<br>Old Address: {$oldAddress}
-			</h4>
-			</font>";
+			echo "<div class='alert alert-info'>
+				<strong>Primary Address</strong> we have detected your Primary Address (the one displayed on the front page) was not one of the addresses in your wallet.dat, 
+				so we have replaced it with a valid address. 
+				<p><small>This can occur when you replace the NavPi's wallet.dat after you have manually set the primary address.</small></p>
+				<small>
+					<br>New Address: {$address}
+					<br>Old Address: {$oldAddress}
+				</small>
+			</div>";
  	
 	?>
 
