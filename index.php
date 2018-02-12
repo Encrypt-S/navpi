@@ -41,7 +41,7 @@ if($primary != ""){
 		if($add == $primary){
 			$hasPrimary = true;
 		}
-		echo "<br> Primary" . $hasPrimary;
+		// echo "<br> Primary" . $hasPrimary;
 	}
 	if ($hasPrimary) {
 		$address = $primary;
@@ -62,14 +62,14 @@ if($primary != ""){
 		$newAddress = $address;
 
 	}
-	echo "<br> 1 " . $address;
+	// echo "<br> 1 " . $address;
 }
 else{
 	$address = $coin->getaddressesbyaccount("")[0];
-	echo "<br> 2 " . $address;
+	// echo "<br> 2 " . $address;
 }
 //-------------------------------------------------------------
-echo "<br> 3 " . $address;
+// echo "<br> 3 " . $address;
 
 if ($currentWallet == NavCoin){
 	$stakinginfo = $coin->getstakinginfo();
@@ -94,11 +94,11 @@ if ($currentWallet == NavCoin){
 			echo "
 			<div class='col-lg-12'>
 				<div class='alert alert-info'>
-					<strong>Primary Address</strong> we have detected your Primary Address (the one displayed on the front page) was not one of the addresses in your wallet.dat, 
-					so we have replaced it with a valid address. 
+					<strong>Primary Address Changed:</strong> We detected your Primary Address (the one displayed on the front page) was not one of the addresses in your wallet.dat, 
+					so it was replaced it with a valid wallet address. 
 					<p><small>This can occur when you replace the NavPi's wallet.dat after you have manually set the primary address.</small></p>
 					<small>
-						<br>New Address: {$address}
+						New Address: {$address}
 						<br>Old Address: {$oldAddress}
 					</small>
 				</div>
