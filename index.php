@@ -1,7 +1,4 @@
 <?php
-// error_reporting(E_ALL);
-// ini_set('display_errors', 1);
-
 include ("header.php");
 include ("pass.php");
 
@@ -36,12 +33,9 @@ if($primary != ""){
 	$addresses = $coin->getaddressesbyaccount("");
 
 	foreach($addresses as $add){
-
-		echo "<br>" . $add;
 		if($add == $primary){
 			$hasPrimary = true;
 		}
-		// echo "<br> Primary" . $hasPrimary;
 	}
 	if ($hasPrimary) {
 		$address = $primary;
@@ -60,16 +54,12 @@ if($primary != ""){
 		fclose($fp);
 		$showMainAddressChangedMessage = true;
 		$newAddress = $address;
-
 	}
-	// echo "<br> 1 " . $address;
 }
 else{
 	$address = $coin->getaddressesbyaccount("")[0];
-	// echo "<br> 2 " . $address;
 }
 //-------------------------------------------------------------
-// echo "<br> 3 " . $address;
 
 if ($currentWallet == NavCoin){
 	$stakinginfo = $coin->getstakinginfo();
