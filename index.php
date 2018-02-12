@@ -28,7 +28,7 @@ $bal3 = abs($bal1 - $bal2);
 $bal4 = abs("{$y['stake']}");
 
 $showMainAddressChangedMessage = false;
-$oldAddress = $address;
+$oldAddress = $primary;
 $newAddress;
 // Fixes bug when the main address is set to an address not in the wallet -----------------------------------------------------
 if($primary != ""){
