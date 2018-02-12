@@ -1,6 +1,6 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
 
 include ("header.php");
 include ("pass.php");
@@ -26,6 +26,11 @@ $bal1 = $coin->getbalance();
 $bal2 = $coin->getbalance("*", 0);
 $bal3 = abs($bal1 - $bal2);
 $bal4 = abs("{$y['stake']}");
+
+$showMainAddressChangedMessage = false;
+$oldAddress = $address;
+$newAddress;
+// Fixes bug when the main address is set to an address not in the wallet -----------------------------------------------------
 if($primary != ""){
 	$hasPrimary = false;
 	$addresses = $coin->getaddressesbyaccount("");
@@ -42,9 +47,9 @@ if($primary != ""){
 		$address = $primary;
 	} else {
 
-
 		$address = $coin->getaddressesbyaccount("")[0];
 		
+		// Duplicated code from setPrimary, as we can't access the function ----------------
 		$primaryLocation = "/home/stakebox/UI/primary".$currentWallet."address.php";
 		// Open the file and erase the contents if any
 		$fp = fopen($primaryLocation, "w");
@@ -53,7 +58,8 @@ if($primary != ""){
 		fwrite($fp, "<?php\n\$primary='';\n?>");	  	
 		// Close the file
 		fclose($fp);
-	
+		$showMainAddressChangedMessage = true;
+		$newAddress = $address;
 
 	}
 	echo "<br> 1 " . $address;
@@ -62,7 +68,7 @@ else{
 	$address = $coin->getaddressesbyaccount("")[0];
 	echo "<br> 2 " . $address;
 }
-
+//-------------------------------------------------------------
 echo "<br> 3 " . $address;
 
 if ($currentWallet == NavCoin){
@@ -83,6 +89,17 @@ if ($currentWallet == NavCoin){
 	$fiatValue = number_format($fiatValue);
 ?>
 <div class="row">
+	<?php 
+		if ($showMainAddressChangedMessage == true)
+			echo "<font color='green'>
+			<h3>We have detected that your Primary Address (the one displayed on the front page) was not one of the addresses in your wallet.dat, 
+			so we have swapped it for a new one. This can occur when you replace the NavPi's wallet.dat after you have manually set the primary address.
+			<br><?php echo New Address: $address; ?>
+			<br><?php echo Old Address: $oldAddress; ?>
+			</font> </h3>";
+ 	
+	?>
+
 	<div class="col-lg-6">
 		<h3>Available Balance: <font color='green'><?php echo number_format($bal1); ?></font> <?php echo $currentWallet; ?></h3>
 		<h4>Unavailable Due To Staking: <font color='red'><?php echo $bal4; ?></font> <?php echo $currentWallet; ?></h4>
