@@ -84,12 +84,11 @@ if ($currentWallet == NavCoin){
 			echo "
 			<div class='col-lg-12'>
 				<div class='alert alert-info'>
-					<strong>Primary Address Changed:</strong> We detected your Primary Address (the one displayed on the front page) was not one of the addresses in your wallet.dat, 
-					so it was replaced it with a valid wallet address. 
-					<p><small>This can occur when you replace the NavPi's wallet.dat after you have manually set the primary address.</small></p>
+					<strong>Primary Address Updated:</strong>We detected your saved primary address was not owned by your wallet. It has been replaced with a valid address.
+					<p><small>This can occur when you restore your wallet after manually setting the primary address.</small></p>
 					<small>
-						New Address: {$address}
-						<br>Old Address: {$oldAddress}
+						New Address: \"{$address}\"
+						<br>Old Address: \"{$oldAddress}\"
 					</small>
 				</div>
 			</div>";
