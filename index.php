@@ -23,12 +23,43 @@ $bal1 = $coin->getbalance();
 $bal2 = $coin->getbalance("*", 0);
 $bal3 = abs($bal1 - $bal2);
 $bal4 = abs("{$y['stake']}");
-if($primary!=""){
-	$address = $primary;
+
+$showMainAddressChangedMessage = false;
+$oldAddress = $primary;
+$newAddress;
+// Fixes bug when the main address is set to an address not in the wallet -----------------------------------------------------
+if($primary != ""){
+	$hasPrimary = false;
+	$addresses = $coin->getaddressesbyaccount("");
+
+	foreach($addresses as $add){
+		if($add == $primary){
+			$hasPrimary = true;
+		}
+	}
+	if ($hasPrimary) {
+		$address = $primary;
+	} else {
+
+		$address = $coin->getaddressesbyaccount("")[0];
+		
+		// Duplicated code from setPrimary, as we can't access the function ----------------
+		$primaryLocation = "/home/stakebox/UI/primary".$currentWallet."address.php";
+		// Open the file and erase the contents if any
+		$fp = fopen($primaryLocation, "w");
+		// Write the data to the file
+		// CODE INJECTION WARNING!
+		fwrite($fp, "<?php\n\$primary='';\n?>");	  	
+		// Close the file
+		fclose($fp);
+		$showMainAddressChangedMessage = true;
+		$newAddress = $address;
+	}
 }
 else{
-        $address = $coin->getaddressesbyaccount("")[0];
+	$address = $coin->getaddressesbyaccount("")[0];
 }
+//-------------------------------------------------------------
 
 if ($currentWallet == NavCoin){
 	$stakinginfo = $coin->getstakinginfo();
@@ -48,6 +79,22 @@ if ($currentWallet == NavCoin){
 	$fiatValue = number_format($fiatValue);
 ?>
 <div class="row">
+	<?php 
+		if ($showMainAddressChangedMessage == true)
+			echo "
+			<div class='col-lg-12'>
+				<div class='alert alert-info'>
+					<strong>Primary Address Updated:</strong>We detected your saved primary address was not owned by your wallet. It has been replaced with a valid address.
+					<p><small>This can occur when you restore your wallet after manually setting the primary address.</small></p>
+					<small>
+						New Address: \"{$address}\"
+						<br>Old Address: \"{$oldAddress}\"
+					</small>
+				</div>
+			</div>";
+ 	
+	?>
+
 	<div class="col-lg-6">
 		<h3>Available Balance: <font color='green'><?php echo number_format($bal1); ?></font> <?php echo $currentWallet; ?></h3>
 		<h4>Unavailable Due To Staking: <font color='red'><?php echo $bal4; ?></font> <?php echo $currentWallet; ?></h4>
