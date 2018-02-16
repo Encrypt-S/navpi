@@ -2,6 +2,8 @@
 
 This is the official github repository for the NAV Coin Stake Box. This repository is the source code behind the raspberry pi image which runs the navcoin daemon and a PHP based web wallet.
 
+Current Version: v1.0.8
+
 You can download the raspberry pi image from our website:
 
 http://www.navcoin.org/downloads
