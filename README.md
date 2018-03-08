@@ -183,3 +183,8 @@ If you have the latest version of the UI, you should be able to perform future u
 If you're upto date with the latest UI, you can run the following script manually:
 - `/home/stakebox/UI/libs/updater.sh`
 - Or you can add it to your sudo crontab to automatically check for and install new updates
+
+
+License
+---------------------
+Distributed under the [MIT software license](http://www.opensource.org/licenses/mit-license.php).
