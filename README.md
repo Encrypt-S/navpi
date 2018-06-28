@@ -154,6 +154,7 @@ Whenever you reboot your device, you need to make sure it is unlocked for stakin
 - Type in your sudo password or if you haven't changed it `navpi101` and press enter.
 - Change ownership of the wallet.dat file so the user running the navcoin daemon can access it.
 - Type the command `sudo chown www-data:www-data /home/stakebox/.navcoin4/wallet.dat` and press enter.
+- Type the command `sudo chmod 600 /home/stakebox/.navcoin4/wallet.dat` and press enter.
 - Reboot the navpi by typing `sudo reboot now` and pressing enter
 
 ## Creating a backup image
