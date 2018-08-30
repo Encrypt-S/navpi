@@ -37,7 +37,7 @@ look for the one that has the 15.8GB Linux partition
 in this case it's > `/dev/disk4`
 
 ### convert SD card to mac dmg
-    sudo dd if=/dev/rdisk4 of=/Volumes/zanman/navpi/v1.0.9/fullsize/navpi_1.0.9_optimised.dmg bs=1m
+    sudo dd if=/dev/rdisk4 of=/Volumes/your-drive/navpi/v1.0.9/fullsize/navpi_1.0.9_optimised.dmg bs=1m
 
 _*note: that we use `rdisk4` instead of `disk4`, this is a much faster way to copy the data_
 
@@ -48,10 +48,10 @@ hit CTRL + T to view the progress in your terminal
 ### convert to dmg to img
     hdiutil convert /path/imagefile.dmg -format UDTO -o /path/convertedimage.iso
 
-    hdiutil convert /Volumes/zanman/navpi/navpi_1.0.9.dmg -format UDTO -o /Volumes/zanman/navpi/navpi_1.0.9.img
+    hdiutil convert /Volumes/your-drive/navpi/navpi_1.0.9.dmg -format UDTO -o /Volumes/your-drive/navpi/navpi_1.0.9.img
 
 ### rename to img
-    mv /Volumes/zanman/navpi/navpi_1.0.9.img.cdr /Volumes/zanman/navpi/navpi_1.0.9.img
+    mv /Volumes/your-drive/navpi/navpi_1.0.9.img.cdr /Volumes/your-drive/navpi/navpi_1.0.9.img
 
 ### shrink image
 use the [PiShrink](https://github.com/Drewsif/PiShrink) script to shrink the image on Ubuntu
