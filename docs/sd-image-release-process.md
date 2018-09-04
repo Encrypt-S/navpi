@@ -15,6 +15,7 @@ Before attempting to optimize the image for release, you should have the followi
   - blocks verified in WebUI (Chromium)
   - all Chromium cache cleared
   - all bash history removed
+  - wallet.dat deleted
   - safe shut down with `sudo shutdown -h now`
   - card removed and placed in compliant usb card reader 
   - plugged into to a Mac running current version of osx
