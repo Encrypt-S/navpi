@@ -9,7 +9,7 @@ switch ($command) {
   case "createproposal":
     list($nav, $address, $time, $description) = explode(' ',$input[1], 4);
     $rpc_command = array($command, $nav, $address, $time, $description);
-    print_r( "<p>command: $rpc_command</p>");
+    print_r( "<p>command: $rpc_command </p>");
     printarray($coin->$rpc_command());
     break;
   case "createpaymentrequest":
@@ -22,11 +22,10 @@ switch ($command) {
   case "paymentrequestvote":
     list($hash, $option) = explode(' ', $input[1]);
     $rpc_command = array($command, $hash, $option);
-    print_r( "<p>command: $rpc_command</p>");
+    print_r( "<p>command: $rpc_command[0],$rpc_command[1], $rpc_command[2]</p>");
     printarray($coin->$rpc_command());
     break;
 }
-
 
 ?>
 
