@@ -7,19 +7,23 @@ $command = $input[0];
 
 switch ($command) {
   case "createproposal":
-    list($nav, $address, $time, $description) = explode($input[1], 4);
-    echo("<p>{$nav}, {$address}, {$time}, {$description}</p>");
+    list($nav, $address, $time, $description) = explode(' ',$input[1], 4);
+    $rpc_command = array($command, $nav, $address, $time, $description);
+    echo "<p>command: $rpc_command</p>";
+    printarray($coin->$rpc_command());
     break;
   case "createpaymentrequest":
-    list($hash, $nav, $unique_id) = explode($input[1], 3);
-    echo("<p>{$hash}, {$nav}, {$unique_id}</p>");
+    list($hash, $nav, $unique_id) = explode(' ',$input[1], 3);
+    $rpc_command = array($command, $hash, $nav, $unique_id);
+    echo "<p>command: $rpc_command</p>";
+    printarray($coin->$rpc_command());
     break;
   case "proposalvote":
   case "paymentrequestvote":
-    echo "<p>command: $command , args: $input[1] </p>";
-
-    list($hash, $option) = explode($input[1]);
-    echo "<p>hash: $hash , option: $option </p>";
+    list($hash, $option) = explode(' ', $input[1]);
+    $rpc_command = array($command, $hash, $option);
+    echo "<p>command: $rpc_command</p>";
+    printarray($coin->$rpc_command());
     break;
 }
 
