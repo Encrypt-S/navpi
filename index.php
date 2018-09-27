@@ -133,50 +133,7 @@ if ($currentWallet == NavCoin){
 	</div>
 </div>
 </div>
-<div class="well">
-	<div class="row">
-		<div class="col-lg-5">
-			<?php
-			$configPath = "/home/stakebox/.navcoin4/navcoin.conf";
-			$configFile = file_get_contents($configPath);
 
-			if (strpos($configFile, "stakervote=1")) {
-				$vote = "YES";
-			} else if (strpos($configFile, "stakervote=0")) {
-				$vote = "NO";
-			} else {
-				$vote = "NOT_VOTED";
-			}
-
-			?>
-			<h4>Network Vote</h4>
-			<p>
-				The Nav Coin Network is currently voting on introducing changes on the consensus protocol. As a participant in our network, we value your input and the decision ultimately is yours. Please cast your vote. For more information on the proposal, please visit <a href="https://navcoin.org/community-fund" style="color:black;text-decoration:underline;">this link</a>
-			</p>
-			<p>
-				<?php if($vote === 'NOT_VOTED') { ?>
-					<b>You have not cast your vote yet.</b>
-				<?php } else { ?>
-					Currently your vote is set to <b><?php echo ucfirst(strtolower($vote)); ?></b>. If you want to change it, use the form below.
-				<?php } ?>
-			</p>
-			<p>
-				Would you like the Nav Coin Network to update the staking rewards to fund a decentralised community fund to help grow the network?
-			</p>
-			<form name="sql-data" method="post" action="/updatevote">
-				<div>
-					<label for="voteYes">Yes</label>
-					<input type="radio" name="vote" value="YES" id="voteYes" <?php if($vote == "YES") echo "checked"; ?> />
-				</div>
-				<div>
-					<label for="voteNo">No</label>
-					<input type="radio" name="vote" value="NO" id="voteNo" <?php if($vote == "NO") echo "checked"; ?> />
-				</div>
-				<button class='btn btn-default' type="submit" name="submitVote" value="vote">Set Vote</button>
-			</form>
-		</div>
-	</div>
-</div>
 <div class="well">
 <div class="row">
 	<div class="col-lg-7">

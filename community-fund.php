@@ -3,7 +3,7 @@ include ("header.php");
 include ("pass.php");
 $all_commands = ($coin->help());
 ?>    
-    <iframe src="https://vibrant-davinci-020291.netlify.com/pi" frameborder="0" class="cf-iframe"></iframe>
+    <iframe src="https://nav-proposal-creator.netlify.com/pi" frameborder="0" class="cf-iframe"></iframe>
     <div style="padding: 5px 15px 5px;">
         <div class="row">
             <div class="col-lg-12">

@@ -1,6 +1,6 @@
 ![NavPi StakeBox](./img/stakebox.jpg)
 
-This is the official github repository for the NAV Coin Stake Box. This repository is the source code behind the raspberry pi image which runs the navcoin daemon and a PHP based web wallet.
+This is the official github repository for the NavCoin Stake Box. This repository is the source code behind the raspberry pi image which runs the navcoin daemon and a PHP based web wallet.
 
 **Current Version:** v1.0.8
 
@@ -179,7 +179,7 @@ This .img file can now be burned to a new SD Card using Etcher.
 
 If you have the latest version of the UI, you should be able to perform future updates by using the update button on the control page.
 
-## Updating the Nav Coin Daemon
+## Updating the NavCoin Daemon
 
 If you're upto date with the latest UI, you can run the following script manually:
 - `/home/stakebox/UI/libs/updater.sh`
