@@ -169,3 +169,9 @@ a:focus {
 form {
   margin-bottom: 0px;
 }
+
+.cf-iframe {
+    width: 100%;
+    margin: 50px 0 30px 0;
+    min-height: 600px;
+}
