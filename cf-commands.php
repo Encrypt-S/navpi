@@ -17,7 +17,7 @@ switch ($command) {
   case "proposalvote":
   case "paymentrequestvote":
     list($hash, $option) = explode($input[1]);
-    echo("<p>{$hash}, {$option}</p>");
+    echo "<p>hash: $hash , option: $option </p>";
     break;
 }
 
