@@ -11,7 +11,7 @@ switch ($command) {
   try {
     
 
-      list($nav, $address, $time, $description) = explode(' ',$input[1], 4);
+      list((int)$nav, $address, (int)$time, $description) = explode(' ',$input[1], 4);
       echo("<p><b> $command $nav $address $time $description </b></p>");
       // $rpc_command = array($command, $nav, $address, $time, $description);
       print_r( "<p>command: $command, $nav, $address, $time, $description</p>");
