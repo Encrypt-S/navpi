@@ -17,7 +17,7 @@ switch ($command) {
       echo("<p><b> $command $nav $address $time $description </b></p>");
       // $rpc_command = array($command, $nav, $address, $time, $description);
       print_r( "<p>command: $command, $nav, $address, $time, $description</p>");
-      printarray($coin->$command($nav, $address, $time, $description));
+      printarray($coin->$command($address, $nav, $time, $description));
     } catch(Exception $e) {
       echo "<p class='bg-danger'><b>{$e}Error: Something went wrong... Double check for spelling error and correct syntax. </b></p>";
     }
