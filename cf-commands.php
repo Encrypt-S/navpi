@@ -15,11 +15,11 @@ switch ($command) {
       $firstCharacter = substr($description, 0,1);
       $lastCharacter = substr($description, -1);
       if ($firstCharacter == '"') {
-        $description = substr($description, 1)
+        $description = substr($description, 1);
       }
 
       if ($lastCharacter == '"') {
-        $description = substr($description, 0, -1)
+        $description = substr($description, 0, -1);
       }
 
       echo("<p><b>$firstCharacter $lastCharacter</b></p>");
@@ -38,11 +38,11 @@ switch ($command) {
       $firstCharacter = substr($unique_id, 0,1);
       $lastCharacter = substr($unique_id, -1);
       if ($firstCharacter == '"') {
-        $unique_id = substr($unique_id, 1)
+        $unique_id = substr($unique_id, 1);
       }
 
       if ($lastCharacter == '"') {
-        $unique_id = substr($unique_id, 0, -1)
+        $unique_id = substr($unique_id, 0, -1);
       }
 
       echo("<p><b>$firstCharacter $lastCharacter</b></p>");
