@@ -11,7 +11,7 @@ switch ($command) {
   try {
     
 
-      list($nav, $address, $time, $description) = explode(' ',$input[1], 4);
+      list($address, $nav, $time, $description) = explode(' ',$input[1], 4);
       $nav = (int)$nav;
       $time = (int)$time;
       echo("<p><b> $command $nav $address $time $description </b></p>");
