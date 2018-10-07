@@ -7,7 +7,7 @@ $all_commands = ($coin->help());
     <div style="padding: 5px 15px 5px;">
         <div class="row">
             <div class="col-lg-12">
-                <form action="cf-commands" method="POST"><input type="hidden">
+                <form action="cf-commands"  method="POST"><input type="hidden">
                     <div class="input-group">
                         <span class="input-group-btn">
                             <button class='btn btn-default' type="submit" value="command">Issue Command</button>

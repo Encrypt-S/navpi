@@ -86,7 +86,7 @@ if($command == "stop") {
 			if($var1 == "") {
 				try {
 					printarray($coin->$command());
-					echo "<p class='bg-success'><b><font color=#3e464b>The command {$command} was successfull.<br> </font></b></p>";
+					echo "<p class='bg-success'><b><font color=#3e464b>The command {$command} was successful.<br> </font></b></p>";
 				} catch(Exception $e) {
 					echo "<p class='bg-danger'><b>{$e}Error: Something went wrong... Double check for spelling error and correct syntax. </b></p>";
 				}   
@@ -94,7 +94,7 @@ if($command == "stop") {
 			else if($var1 != "" && $var2 == "") {
 				try {
 					printarray($coin->$command($var1));
-					echo "<p class='bg-success'><b><font color=#3e464b>The command {$command} {$var1} was successfull.<br> </font></b></p>";
+					echo "<p class='bg-success'><b><font color=#3e464b>The command {$command} {$var1} was successful.<br> </font></b></p>";
 				} catch(Exception $e) {
 					echo "<p class='bg-danger'><b>Error: Something went wrong... Double check for spelling error and correct syntax. </b></p>";
 				}   
@@ -102,7 +102,7 @@ if($command == "stop") {
 			else if($var1 != "" && $var2 != "" && $var3 == "") {
 				try {
 					printarray($coin->$command($var1, $var2));
-					echo "<p class='bg-success'><b><font color=#3e464b>The command {$command} {$var1} {$var2} was successfull.<br> </font></b></p>";
+					echo "<p class='bg-success'><b><font color=#3e464b>The command {$command} {$var1} {$var2} was successful.<br> </font></b></p>";
 				} catch(Exception $e){
 					echo "<p class='bg-danger'><b>Error: Something went wrong... Double check for spelling error and correct syntax. </b></p>";
 				}   
@@ -110,7 +110,7 @@ if($command == "stop") {
 			else if($var1 != "" && $var2 != "" && $var3 != "" && $var4 == "") {
 				try {
 					printarray($coin->$command($var1, $var2, $var3));
-					echo "<p class='bg-success'><b><font color=#3e464b>The command {$command} {$var1} {$var2} {$var3} was successfull.<br> </font></b></p>";
+					echo "<p class='bg-success'><b><font color=#3e464b>The command {$command} {$var1} {$var2} {$var3} was successful.<br> </font></b></p>";
 				} catch(Exception $e) {
 					echo "<p class='bg-danger'><b>Error: Something went wrong... Double check for spelling error and correct syntax. </b></p>";
 				}   
@@ -118,7 +118,7 @@ if($command == "stop") {
 			else if($var1 != "" && $var2 != "" && $var3 != "" && $var4 != "" && $var5 == "") {
 				try {
 					printarray($coin->$command($var1, $var2, $var3, $var4));
-					echo "<p class='bg-success'><b><font color=#3e464b>The command {$command} {$var1} {$var2} {$var3} {$var4} was successfull.<br> </font></b></p>";
+					echo "<p class='bg-success'><b><font color=#3e464b>The command {$command} {$var1} {$var2} {$var3} {$var4} was successful.<br> </font></b></p>";
 				} catch(Exception $e) {
 					echo "<p class='bg-danger'><b>Error: Something went wrong... Double check for spelling error and correct syntax. </b></p>";
 				}   
@@ -126,7 +126,7 @@ if($command == "stop") {
 			else if($var1 != "" && $var2 != "" && $var3 != "" && $var4 != "" && $var5 != "" && $var6 == "") {
 				try {
 					printarray($coin->$command($var1, $var2, $var3, $var4, $var5));
-					echo "<p class='bg-success'><b><font color=#3e464b>The command {$command} {$var1} {$var2} {$var3} {$var4} {$var5} was successfull.<br> </font></b></p>";
+					echo "<p class='bg-success'><b><font color=#3e464b>The command {$command} {$var1} {$var2} {$var3} {$var4} {$var5} was successful.<br> </font></b></p>";
 				} catch(Exception $e) {
 					echo "<p class='bg-danger'><b>Error: Something went wrong... Double check for spelling error and correct syntax. </b></p>";
 				}   
@@ -134,7 +134,7 @@ if($command == "stop") {
 			else if($var1 != "" && $var2 != "" && $var3 != "" && $var4 != "" && $var5 != "" && $var6 != "" && $var7 == "") {
 				try {
 					printarray($coin->$command($var1, $var2, $var3, $var4, $var5, $var6));
-					echo "<p class='bg-success'><b><font color=#3e464b>The command {$command} {$var1} {$var2} {$var3} {$var4} {$var5} {$var6} was successfull.<br> </font></b></p>";
+					echo "<p class='bg-success'><b><font color=#3e464b>The command {$command} {$var1} {$var2} {$var3} {$var4} {$var5} {$var6} was successful.<br> </font></b></p>";
 				} catch(Exception $e) {
 					echo "<p class='bg-danger'><b>Error: Something went wrong... Double check for spelling error and correct syntax. </b></p>";
 				}   
@@ -142,7 +142,7 @@ if($command == "stop") {
 			else if($var1 != "" && $var2 != "" && $var3 != "" && $var4 != "" && $var5 != "" && $var6 != "" && $var7 != "") {
 				try {
 					printarray($coin->$command($var1, $var2, $var3, $var4, $var5, $var6, $var7));
-					echo "<p class='bg-success'><b><font color=#3e464b>The command {$command} {$var1} {$var2} {$var3} {$var4} {$var5} {$var6} {$var7} was successfull.<br> </font></b></p>";
+					echo "<p class='bg-success'><b><font color=#3e464b>The command {$command} {$var1} {$var2} {$var3} {$var4} {$var5} {$var6} {$var7} was successful.<br> </font></b></p>";
 				} catch(Exception $e) {
 					echo "<p class='bg-danger'><b>Error: Something went wrong... Double check for spelling error and correct syntax. </b></p>";
 				}   
