@@ -6,7 +6,7 @@
 		"user" => "username",  
 		"pass" => "stakebox",      
 		"host" => "localhost",     
-		"port" => 44446,
+		"port" => 44444,
 		"protocol" => "http",
 		"ticker" => "NAV"
 	);
