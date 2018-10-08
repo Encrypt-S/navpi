@@ -22,7 +22,6 @@ switch ($command) {
         $description = substr($description, 0, -1);
       }
 
-      echo("<p><b>$firstCharacter $lastCharacter</b></p>");
       echo("<p><b>$command $address $nav $time $description</b></p>");
       printarray($coin->$command($address, $nav, $time, $description));
     } catch(Exception $e) {
@@ -34,7 +33,6 @@ switch ($command) {
       list($hash, $nav, $unique_id) = explode(' ',$input[1], 3);
       $nav = (int)$nav;
 
-
       $firstCharacter = substr($unique_id, 0,1);
       $lastCharacter = substr($unique_id, -1);
       if ($firstCharacter == '"') {
@@ -44,8 +42,6 @@ switch ($command) {
       if ($lastCharacter == '"') {
         $unique_id = substr($unique_id, 0, -1);
       }
-
-      echo("<p><b>$firstCharacter $lastCharacter</b></p>");
 
       echo("<p><b>$command $hash $nav $unique_id</b></p>");
       printarray($coin->$command($hash, $nav, $unique_id));
@@ -58,7 +54,6 @@ switch ($command) {
     try {
       list($hash, $option) = explode(' ', $input[1]);
       echo("<p><b>$command $hash $option</b></p>");
-      print_r( "<p>$command, $hash, $option</p>");
       printarray($coin->$command($hash, $option));
     } catch(Exception $e) {
       echo "<p class='bg-danger'><b>{$e}Error: Something went wrong... Double check for spelling error and correct syntax. </b></p>";
