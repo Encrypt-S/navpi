@@ -43,8 +43,8 @@ installed="${installed:23}"
 echo "Installed Version: $installed"
 
 if [ "$installed" == "$tag" ]; then
-  echo "already at latest version"
-  exit 1
+ echo "already at latest version"
+ exit 1
 fi
 
 echo "Update Required... Updating"

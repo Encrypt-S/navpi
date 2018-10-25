@@ -1,6 +1,6 @@
-![alt text](https://raw.githubusercontent.com/navcoindev/navcoin-media/master/logo/logo-extended.png "NAV Coin")
+![alt text](https://raw.githubusercontent.com/navcoindev/navcoin-media/master/logo/logo-extended.png "NavCoin")
 
-NAV Coin Stake Box 공식 github 저장소입니다. 이 저장소는 navcoin 데몬과 PHP 웹 지갑 기반으로 실행되는 라스베리 파이 구축 매뉴얼 입니다.
+NavCoin Stake Box 공식 github 저장소입니다. 이 저장소는 navcoin 데몬과 PHP 웹 지갑 기반으로 실행되는 라스베리 파이 구축 매뉴얼 입니다.
 
 아래 링크 주소에서 라스베리 파이 이미지를 다운로드 할 수 있습니다.
 
@@ -94,7 +94,7 @@ State or Province Name(시 /도 이름) : Auckland
 
 Locality Name(지역 이름) : Auckland
 
-Organization Name:(조직 이름) : Nav Coin
+Organization Name:(조직 이름) : NavCoin
 
 Organizational Unit Name(조직 단위 이름) : Nav Pi
 

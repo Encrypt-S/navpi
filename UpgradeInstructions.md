@@ -21,6 +21,7 @@
 ## Optional
 
 ### Setup auto updates
+
 The update script checks for new versions and downloads them directly from our secure GitHub organisation. If you want to stick with manual updates, you can periodically run the updater script manually with the process above.
 
 Or if you want the updates to be automated, you can setup auto-updating for your NavPi which will check for a new version daily and install it if available:
@@ -31,10 +32,13 @@ Or if you want the updates to be automated, you can setup auto-updating for your
 * Press `Ctrl+O`
   * This will display a prompt to save the file. Press enter to accept.
 * Press `Ctrl + X` to exit the text editor
+* 
 Your NavPi will now check for updates once a day at 00.00 GMT
 
 ### Enable localhost access
+
 If you want to be able to access the webUI from the NavPi itself
+
 * In a terminal type `sudo leafpad /etc/apache2/sites-available/navpi.conf`
   * A text editor will open
 * In the config file find the `<VirtualHost *:443>` section and the `<Directory>` within that
@@ -44,4 +48,5 @@ If you want to be able to access the webUI from the NavPi itself
 * Save the file and close the editor
 * In the terminal type and run: `sudo service apache2 reload`
   * This will restart the webserver
+  * 
 You can now access the WebUI with the NavPi via `127.0.0.1`
