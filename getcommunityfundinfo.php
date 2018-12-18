@@ -33,7 +33,7 @@ include ("pass.php");
                 // with the json, we could loop over the yes-votes, no-votes, non-votes separately and don't have to check them
                 foreach ($communityfundinfos['votingPeriod']['votedProposals'] as $row) {
                   $desc = $row['str'];
-                  $amount = $row['amount'] * 0.00000001;
+                  $amount = $row['amount'];
                   $hash = $row['hash'];
 
                   $isYesVote = array_filter($proposalYesVotes, function($var) use ($hash) { return preg_match("/\b$hash\b/i", $var); });
