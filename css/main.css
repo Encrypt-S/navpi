@@ -125,6 +125,9 @@ a:focus {
 .table-bordered > tfoot > tr > td {
   border: 1px solid #CCC;
 }
+.table-bordered > thead > tr >td.valignmiddle {
+  vertical-align: middle;
+}
 .table-hover > tbody > tr:hover {
   color: #333;
   background-color: #f5f5f5;
