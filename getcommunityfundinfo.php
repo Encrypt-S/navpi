@@ -87,7 +87,7 @@ include ("pass.php");
                 </tr>";
 
                 // at the moment, paymentrequestvotelist() returns a string which would have to be parsed
-                // it's easier to loop over the result of cfundstats until proposalvotelist returns a json object
+                // it's easier to loop over the result of cfundstats until paymentrequestvotelist returns a json object
                 // with the json, we could loop over the yes-votes, no-votes, non-votes separately and don't have to check them
                 foreach ($communityfundinfos['votingPeriod']['votedPaymentrequests'] as $row) {
                   $proposalDesc = $row['proposalDesc'];
